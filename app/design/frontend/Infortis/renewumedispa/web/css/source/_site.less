@@ -1,0 +1,893 @@
+/* ====================== Custom LESS For Website ========================================= */
+
+/* ====================== Custom LESS For Header Top ========================================= */
+.header-container .header-top .central-column { display: none; }
+.top-contact { font-family: 'AvenirNextLTPro-Demi', Arial, Helvetica, sans-serif; }
+
+.header-container .item-right:nth-child(2),
+.header-container .right-column .top-links ul { float: left; }
+.header-appointment a { display: block; }
+.breadcrumbs { display: none; }
+div#mp_rw_socials_earning { display: none; }
+
+/* ====================== Custom LESS For Appointment Form ========================================= */
+
+.make-appointment .fieldset > .field > .label { display: none; }
+.make-appointment .webforms-calendar { width: 100%; }
+.make-appointment .webforms-calendar .ui-datepicker-trigger { top: -0.4rem; }
+
+.make-appointment {
+  background-color: #fff;
+  padding: 45px;
+  width: 81%;
+  margin-left: 15%;
+  -webkit-box-shadow: 0 -1px 14px 0 rgba(50, 50, 50, 0.43);
+  -moz-box-shadow: 0 -1px 14px 0 rgba(50, 50, 50, 0.43);
+  box-shadow: 0 -1px 14px 0 rgba(50, 50, 50, 0.43);
+}
+
+.footer-top {
+  background: url(../images/footer-top-bg.jpg);
+  margin-top: -1px;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: contain;
+}
+
+.make-appointment .fieldset .legend {
+  font-family: @custom-headings-font-family;
+  color: #1c2a67;
+  font-size: 32px;
+  line-height: 1;
+  margin: 0;
+}
+
+.make-appointment input.input-text,
+.make-appointment select,
+.make-appointment textarea {
+  color: #372327;
+  opacity: 50%;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.4;
+  border: none;
+  border-bottom: 1px solid;
+}
+
+.make-appointment .actions-toolbar > .primary button {
+  background: @custom-primary-color !important;
+  color: #fff !important;
+  border-radius: 5px;
+  width: 100%;
+  line-height: 2 !important;
+  font-family: @custom-secondry-font-family;
+  font-size: 20px;
+}
+
+.make-appointment .actions-toolbar > .primary {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 250px;
+  float: none;
+  display: block;
+}
+
+.make-appointment .fieldset > .field.type-select-checkbox {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.make-appointment .fieldset > .field.type-select-checkbox > .control {
+  column-count: 2;
+}
+
+.make-appointment .fieldset > .field.type-select-checkbox > .label {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.make-appointment label {
+  color: #232323;
+  opacity: 60%;
+}
+
+.make-appointment [type=checkbox] {
+  margin-top: 4px;
+}
+
+.make-appointment input.input-text::placeholder {
+  color: #232323;
+}
+
+.make-appointment .fieldset > .field:not(.choice) > .control {
+  width: 100%;
+}
+
+.make-appointment ._keyfocus *:focus,
+.make-appointment input:not([disabled]):focus,
+.make-appointment textarea:not([disabled]):focus,
+.make-appointment select:not([disabled]):focus {
+  box-shadow: none;
+}
+
+.make-appointment .type-html {
+  color: @custom-primary-color;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 10px;
+  opacity: 50%;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ====================== Custom LESS For Testimonials ========================================= */
+
+.testimonials {
+  background: #eceff2 url('../images/testimonial-bg.jpg');
+  background-size: contain;
+  padding-top: 95px;
+}
+
+.testimonials h2 {
+  color: #1c2a67;
+  text-align: center;
+  background: url(../images/testimonial-heading.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 70px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+p.testi_img {
+  margin-top: 40px;
+}
+
+p.testi_img img {
+  width: auto !important;
+}
+
+p.testi_desc img {
+  display: block;
+  margin-top: 20px;
+}
+
+.testimonials .flex-control-nav.flex-control-paging {
+  display: none;
+}
+
+.testimonials a.flex-next {
+  position: absolute;
+  top: 32%;
+  display: block;
+  z-index: 10;
+  cursor: pointer;
+  font-size: 0 !important;
+  text-decoration: none !important;
+  margin: -20px 0 0;
+  right: 0;
+  opacity: 1;
+  color: #1c2a67;
+}
+
+.testimonials a.flex-next::before {
+  content: "\6a";
+  font-family: 'arrows', sans-serif;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+  font-size: 25px;
+  text-decoration: none !important;
+  transition: all 200ms ease-in-out 0s;
+}
+
+.testimonials-flexslider.carousel.container {
+  position: relative;
+}
+
+.testimonials .flex-prev::before {
+  content: "\69";
+  font-family: 'arrows', sans-serif;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+  font-size: 25px;
+  text-decoration: none !important;
+  transition: all 200ms ease-in-out 0s;
+}
+
+.testimonials .flex-prev {
+  position: absolute;
+  top: 32%;
+  display: block;
+  z-index: 10;
+  cursor: pointer;
+  font-size: 0 !important;
+  text-decoration: none !important;
+  margin: -20px 0 0;
+  opacity: 1;
+  left: -50px;
+  color: #1c2a67;
+}
+.testi_author { font-weight: 600; }
+.testi_rating .fa.fa-star.checked { color: #1c2a67; }
+.testi_rating .fa.fa-star::before { font-size: 13px; }
+
+/* ====================== Custom LESS For Our Commitment Block ========================================= */
+
+.before-after {
+  background-color: #f6f6f6;
+}
+
+.home-shop img { width: 100%; }
+
+.home-shop {
+  position: relative;
+  margin-top: 70px;
+}
+
+.homeshop-content h5 {
+  color: @custom-color-1;
+  font-size: 51px;
+  margin: 30px 0 60px;
+  font-family: @custom-primary-font-family;
+  text-transform: none;
+}
+
+.homeshop-content {
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.homeshop-content img {
+  width: auto;
+  max-width: 160px;
+  margin-top: 100px;
+}
+
+.home-shop a {
+  color: @custom-color-1;
+  display: block;
+  font-size: 22px;
+  border: 1px solid @custom-color-1;
+  max-width: 350px;
+  text-align: center;
+  padding: 8px 0;
+  margin: 0 auto;
+  font-family: @custom-secondry-font-family;
+}
+
+.home-shop a:hover { color: @custom-color-1; }
+
+/* ====================== Custom LESS For Our Banner Bottom Block ========================================= */
+.cms-index-index .column.main {
+  min-height: auto;
+  padding: 0;
+}
+
+.cms-index-index .main.container { padding-bottom: 0; }
+.cms-index-index main#maincontent { background: url('../images/home-cta-bg.jpg'); }
+
+.banner-bottom p {
+  font-size: 23px;
+  width: 68%;
+  margin: 0 auto;
+}
+
+.banner-bottom h1 {
+  width: 68%;
+  margin: 70px auto 40px;
+}
+
+.banner-bottom h1 span {
+  color: #232323;
+}
+
+.banner-bottom {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.home_brand.container {
+  text-align: center;
+  margin: 40px auto 90px;
+}
+
+.home_brand p {
+  font-size: 19px;
+  width: 90%;
+  margin: 0 auto 15px;
+}
+
+.home_brand p.usecode {
+  font-size: 15px;
+}
+
+a.visit-store {
+  background-color: #1c2a67;
+  color: #fff !important;
+  font-family: 'AvenirNextLTPro-Demi', Arial, Helvetica, sans-serif;
+  padding: 10px 40px;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.v-line {
+  border-right: 1px solid;
+  width: 1px;
+  margin: 25px auto;
+  min-height: 210px;
+}
+
+/* ====================== Custom LESS For Our Home Page Cta Block ========================================= */
+.cta-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-cta {
+  margin: 0 auto 50px;
+  display: inline-block;
+  text-align: center;
+}
+
+.cta-block .cta-description {
+  -moz-box-sizing: border-box;
+  -moz-transition: all 0.5s ease-in 0s;
+  -o-transition: all 0.5s ease-in 0s;
+  -webkit-box-sizing: border-box;
+  -webkit-transition: all 0.5s ease-in 0s;
+  background: #372737;
+  opacity: 0.7;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  top: 100%;
+  transition: all 0.5s ease-in 0s;
+  width: 100%;
+}
+
+.cta-block .cta-text {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  bottom: 0;
+  transition: all 0.5s ease-in 0s;
+  -moz-transition: all 0.5s ease-in 0s;
+  -o-transition: all 0.5s ease-in 0s;
+  -webkit-transition: all 0.5s ease-in 0s;
+}
+
+.cta-block .cta-description .inner {
+  position: absolute;
+  padding: 0 0 15px;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  bottom: 20px;
+}
+
+.cta-block .cta-inner {
+  min-height: 450px;
+  position: relative;
+  text-align: center;
+}
+
+.cta-block .cta-text h2 {
+  color: #fff;
+  font-weight: 500;
+  line-height: 1;
+  font-size: 30px;
+}
+
+.cta-block:hover .cta-description {
+  top: 0;
+}
+
+.cta-block:hover .cta-title {
+  z-index: 100;
+  bottom: calc(95%) !important;
+  transform: translateY(120%);
+}
+
+.cta-description p {
+  color: #fff;
+  margin-bottom: 20px;
+  padding: 0 30px;
+  font-size: 13px;
+}
+
+.cta-block .cta-description a {
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  padding: 7px 20px;
+  font-size: 18px;
+}
+
+/* ====================== Custom LESS For Before/After Page ========================================= */
+
+.twentytwenty-container img {
+  width: 100%;
+  height: inherit;
+}
+
+.before-after-section .examples.grid12-6 img {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.before-after-section a.view-more {
+  background-color: #1c2a67;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'AvenirNextLTPro-Demi', Arial, Helvetica, sans-serif;
+  display: inline-block;
+  margin: 60px 0;
+  font-size: 25px;
+  padding: 10px 20px;
+  border-radius: 13px;
+}
+
+.twentytwenty-handle {
+  top: 90% !important;
+  background: #1c2a67 !important;
+  border-color: #1c2a67 !important;
+  border-radius: 0 !important;
+  height: 23px !important;
+}
+.twentytwenty-left-arrow { border-right: 6px solid #fff !important; }
+.twentytwenty-right-arrow { border-left: 6px solid #fff !important; }
+.twentytwenty-handle::after { top: 32% !important; }
+.twentytwenty-handle::before { bottom: 32% !important; }
+.cms-before-after .breadcrumbs { display: none; }
+
+.twentytwenty-overlay .twentytwenty-before-label,
+.twentytwenty-overlay .twentytwenty-after-label {
+  opacity: 1;
+}
+
+.twentytwenty-before-label::before,
+.twentytwenty-after-label::before {
+  top: 11% !important;
+  background: #fff !important;
+  color: #232323 !important;
+  font-size: 12px !important;
+  padding: 0 10px !important;
+}
+
+.before-after-buttons a {
+  display: inline-block;
+  background-color: #1c2a67;
+  color: #fff !important;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 19px;
+  margin: 0 2px;
+  font-family: 'AvenirNextLTPro-Demi', Arial, Helvetica, sans-serif;
+}
+
+.section.heading-primary {
+  text-align: center;
+  padding: 40px 0 60px;
+}
+
+.twentytwenty-overlay {
+  background: transparent !important;
+}
+
+.section.heading-primary h1 {
+  text-transform: capitalize;
+  font-size: 60px;
+}
+.section.heading-primary p { font-size: 25px; }
+
+.before-after-section .figcaption {
+  position: absolute;
+  bottom: 9px;
+  z-index: 90;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.comparison.grid12-6 { position: relative; }
+
+section.before-after-section h4 {
+  margin: 0 1% 2%;
+  font-size: 30px;
+}
+
+.cms-before-after .main-container .main.container,
+.cms-before-after .main-container .main.container .inner-container {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.before-after-section .section-content {
+  padding-top: 20px;
+}
+
+.before-after-section .section-content .container {
+  background: #fff;
+  border: 1px solid;
+  border-color: rgba(35, 35, 35, 0.2);
+  margin-bottom: 10px;
+}
+
+.section-content h5 img {
+  width: 27px;
+}
+
+.section-content h5 {
+  margin-left: 10px;
+  color: #1c2a67 !important;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: left;
+  margin-top: 9px;
+}
+
+#fancybox-swf embed { height: 100%; }
+
+/* ====================== Custom LESS For About Us ========================================= */
+
+.about-us h3 {
+  color: #1c2a67;
+  font-family: 'AvenirNextLTPro-Demi', Arial, Helvetica, sans-serif;
+  margin-bottom: 35px;
+  font-size: 35px;
+  text-transform: capitalize;
+}
+
+.about-us p {
+  font-size: 19px;
+  margin-bottom: 40px;
+}
+
+.about-odd {
+  background-color: #f6f6f6;
+  padding: 120px 0;
+}
+
+.about-even {
+  padding: 120px 0;
+}
+
+.cms-about-us .columns .column.main {
+  padding-bottom: 0;
+}
+
+.cms-about-us .main.container {
+  padding-bottom: 0;
+}
+
+.cms-about-us .sw-flexslider-element {
+  margin-bottom: 0;
+  padding-bottom: 50px;
+  background-color: #eceff2;
+}
+
+.cms-index-index .inner-footer,
+.cms-index-index .inner-care-credit,
+.home-footer,
+.social-icons {
+  display: none;
+}
+
+.cms-index-index .home-footer,
+.cms-index-index .social-icons { display: block; }
+
+/* ====================== Custom LESS For CMS Pages ========================================= */
+.innerpage-banner {
+  background: url('../images/innerheader-bg.jpg');
+  text-align: center;
+  padding: 45px 0 30px;
+}
+
+.innerpage-banner p {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.innerpage-banner h1 {
+  font-size: 50px;
+  margin: 0 0 0.67em;
+}
+.cms-page h2 { color: #c9a489; }
+ul.bullet { margin-top: 19px; }
+
+.bullet li {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.contact-form-container .fieldset > .field:not(.choice) > .label {
+  width: 100%;
+  text-align: left;
+}
+
+.contact-index-index .page-title-wrapper {
+  display: none;
+}
+
+.innerpage-banner.contact-banner {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 49.3%;
+  margin-bottom: 100px;
+}
+
+.contact-info h3 {
+  font-family: 'AvenirNextLTPro-Demi', Arial, Helvetica, sans-serif;
+  text-transform: none;
+  color: #1c2a67;
+  font-size: 22px;
+  margin-top: 40px;
+}
+
+.contact-info p {
+  margin-bottom: 0;
+}
+
+.contact-form-container {
+  -webkit-box-shadow: 0 0 12px 0 rgba(50, 50, 50, 0.76);
+  -moz-box-shadow: 0 0 12px 0 rgba(50, 50, 50, 0.76);
+  box-shadow: 0 0 12px 0 rgba(50, 50, 50, 0.76);
+  margin: 40px auto 0;
+  width: 70%;
+  padding: 40px 40px;
+  box-sizing: border-box;
+}
+
+p.required-note {
+  margin: 5px 0 35px;
+}
+
+.contact-form-container input.input-text,
+.contact-form-container textarea {
+  border-width: 0;
+  border-bottom-width: 1px;
+}
+
+.contact-form-container .control {
+  width: 100% !important;
+}
+
+.contact-form-container input:not([disabled]):focus,
+.contact-form-container textarea:not([disabled]):focus,
+.contact-form-container select:not([disabled]):focus {
+  border-color: #c2c2c2;
+  box-shadow: 0 0 black;
+}
+
+.contact-form-container .actions-toolbar {
+  margin: 0 !important;
+  text-align: center;
+}
+
+.contact-form-container button.action.submit.primary {
+  width: 200px;
+  border-radius: 8px;
+}
+
+.contact-form-container .actions-toolbar > .primary {
+  float: none;
+}
+
+.contact-social {
+  margin-top: 60px;
+}
+
+.contact-social .ib,
+.contact-social .ib:hover {
+  background: #1c2a67;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.contact-social .contact-consultation {
+  background-color: #1c2a67;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 10px;
+}
+
+a.contact-consultation:hover {
+  color: #fff;
+}
+
+.category-view {
+  background: #d6d9e2;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
+
+.page-products .columns {
+  position: inherit;
+}
+
+.catalog-category-view .main-container {
+  position: relative;
+  padding-top: 96px;
+}
+
+.category-description h1 {
+  color: #1c2a67;
+  text-align: center;
+  padding: 35px 0 20px;
+}
+
+.catalog-category-view .breadcrumbs {
+  margin-top: 60px;
+}
+
+.page-title {
+  background: #d6d9e2;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+
+.main-container {
+  position: relative;
+  padding-top: 120px;
+}
+
+.cms-before-after .main-container {
+  padding: 0;
+}
+
+.cms-before-after .before-after {
+  background: #fff;
+}
+
+.cms-index-index .main-container,
+.catalog-product-view .main-container {
+  padding: 0;
+}
+
+h1.page-title span {
+  display: block;
+  padding: 0.67em;
+}
+
+.catalog-product-view h1.page-title,
+.catalog-product-view h1.page-title span {
+  position: relative;
+  background: transparent;
+  text-align: left;
+  padding: 10px 0 0;
+  font-size: 35px;
+}
+
+.product-info-main .box-tocart .actions button#product-addtocart-button {
+  padding: 2px 0 !important;
+}
+
+.product.data.items.style1.show-tabs > .item.title > .switch {
+  color: #232323;
+}
+
+/* ====================== Custom LESS For Newsletter ========================================= */
+#newsletter-sidebar.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+#newsletter-sidebar.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+#newsletter-sidebar.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+#newsletter-sidebar.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#newsletter-btn .openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: @custom-tertiary-color;
+  color: @custom-color-1;
+  padding: 10px 15px;
+  border: none;
+}
+
+#newsletter-btn .openbtn:hover {
+  background-color: @custom-tertiary-color;
+  color: @custom-color-1;
+}
+
+#newsletter-btn {
+  position: fixed;
+  top: 50%;
+  z-index: 100;
+  transform: translateY(-50%);
+}
+
+.block.newsletter .actions {
+  display: inline-block;
+  margin: 0 0 0 -5px;
+}
+
+.footer-container .footer-top .inner-container {
+  padding: 0 !important;
+}
+
+.grid12-6.footer-hours {
+  margin-left: 0;
+}
+
+.grid12-6.footer-hours > img {
+  visibility: hidden;
+}
+
+.operation-hours {
+  width: 70%;
+  float: right;
+  margin-top: 40px;
+}
+
+.footer .block.newsletter {
+  background-color: transparent !important;
+  width: 100%;
+}
+
+.footer .block.newsletter h5 {
+  color: #fff;
+  font-weight: 700;
+}
+
+.block.newsletter input[type="email"]::placeholder {
+  text-transform: uppercase;
+}
+
+.block.newsletter .action.subscribe {
+  background-color: #d6d9e2 !important;
+  color: #1c2a67 !important;
+  font-size: 16px;
+}
+
+.block.newsletter .field .control::before { display: none; }
+
+.block.newsletter input { padding-left: 10px; }
+
+@media screen and (max-height: 450px) {
+  .sidebar { padding-top: 15px; }
+  .sidebar a { font-size: 18px; }
+}

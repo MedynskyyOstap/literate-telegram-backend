@@ -1,0 +1,82 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+
+?>
+<div class="block newsletter">
+    <div class="title"><strong><?= $block->escapeHtml(__('Newsletter')) ?></strong></div>
+    <div class="content">
+        <form class="form subscribe"
+            novalidate
+            action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+            method="post"
+            data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+            id="newsletter-validate-detail">
+            <h5>SIGN UP FOR PROMOTIONAL EMAILS</h5>
+            <div class="field newsletter">
+                
+                <div class="control">
+                    <input name="email" type="email" id="newsletter"
+                                placeholder="<?= $block->escapeHtml(__('email address')) ?>"
+                                data-validate="{required:true, 'validate-email':true}"/>
+                </div>
+                    <div class="actions">
+                <button class="action subscribe primary" title="<?= $block->escapeHtmlAttr(__('Subscribe')) ?>" type="submit">
+                    <span><?= $block->escapeHtml(__('Subscribe')) ?></span>
+                </button>
+            </div>
+            </div>
+        
+        </form>
+		<div class="scg-msg">
+			<div class="messages">
+				<div class="response-box message"><div class="response-msg"></div></div>
+			</div>
+		</div>
+    </div>
+</div>
+<script>
+    require(['jquery'],function($){
+        var form = $('#newsletter-validate-detail');
+        form.submit(function(e) {
+            if(form.validation('isValid')){
+                var email = $("#newsletter-validate-detail #newsletter").val();
+                var url = form.attr('action');
+                var loadingMessage = $('#loading-message');                
+                e.preventDefault();
+                try{
+                    loadingMessage.html('Submitting...').show();
+                    $('.scg-msg > messages').html();
+ 
+                    $.ajax({
+                        url: url,
+                        dataType: 'json',
+                        type: 'POST',
+                        data: {email: email},
+                        success: function (data){
+                            if(data.status != "ERROR"){
+                                $("#newsletter-validate-detail #newsletter").val('');
+								$('.response-box').removeClass('message-error error');
+								$('.response-box').addClass('message-success success');
+                                $('.response-msg').html(data.msg);
+                            }else{
+								$('.response-box').removeClass('message-success success');
+								$('.response-box').addClass('message-error error');
+								$('.response-msg').html(data.msg);
+                            }
+                            loadingMessage.html(data.msg);
+                        },
+                    });
+                } catch (e){
+                    loadingMessage.html(e.message);
+                }
+            }
+        });
+    })
+</script>

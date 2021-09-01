@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true" />
+        <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        <referenceBlock name="related.product.addto.compare" remove="true"/>
+        <referenceBlock name="sidebar.additional" remove="true"/>
+
+        <referenceContainer name="content">
+            <block class="Infortis\Base\Block\Product\View" name="product-view-wrapper" template="product/view.phtml" before="-">
+                <container name="container_product_image_1" label="Product View, Image Column"/>
+                <container name="container_product_primary_1" label="Product View, Primary Column, Container 1"/>
+                <container name="container_product_primary_2" label="Product View, Primary Column, Container 2"/>
+                <container name="container_product_secondary_1" label="Product View, Secondary Column, Container 1"/>
+                <container name="container_product_secondary_2" label="Product View, Secondary Column, Container 2"/>
+                <container name="container_product_lower_primary_1" label="Product View, Lower Primary Column, Container 1"/>
+                <container name="container_product_lower_primary_2" label="Product View, Lower Primary Column, Container 2"/>
+                <container name="container_product_lower_secondary_1" label="Product View, Lower Secondary Column, Container 1"/>
+                <container name="container_product_lower_secondary_2" label="Product View, Lower Secondary Column, Container 2"/>
+
+                <!-- Static blocks -->
+                <block class="Magento\Cms\Block\Block" name="block_product_secondary_bottom">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_product_secondary_bottom</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="product.info.options.wrapper">
+            <container name="mageworx.option.swatches.container" after="product.info.options">
+                <block class="Infortis\Base\Block\Product\View" name="mageworx.option.swatches" template="Magento_Catalog::product/view/config.phtml"/>
+
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.promo" template="product/view/promo.phtml" before="-">
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getDemoLink</argument>
+                        <argument name="at_code" xsi:type="string">promodescription_text</argument>
+                        <argument name="css_class" xsi:type="string">skuPromo</argument>
+                        <argument name="add_attribute" xsi:type="string">itemprop="promodescription_text"</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceBlock>
+
+        <!-- Insert product view blocks into the new product view wrapper -->
+        <move element="product.info.main" destination="product-view-wrapper"/>
+        <move element="product.info.media" destination="product-view-wrapper"/>
+        <move element="bundle.options.container" destination="product-view-wrapper"/>
+        <move element="product.info.details" destination="product-view-wrapper"/>
+        <move element="catalog.product.related" destination="product-view-wrapper"/>
+        <move element="product.info.upsell" destination="product-view-wrapper"/>
+        <move element="product.info.promo" destination="container_product_primary_1" after="product.info.review"/>
+        <move element="mp_rw_review_product" destination="product.info.main" before="product.info.overview"/>
+
+        <referenceBlock name="product.info.stock.sku" remove="true"/> 
+
+         <referenceContainer name="content">                        
+            <block class="Infortis\Base\Block\Product\View" name="product_view_main_custom_block2" after="-" template="Magento_Catalog::product/view/main_custom_block2.phtml"/>
+        </referenceContainer>
+        <move element="product_view_main_custom_block2" destination="product.info.main" after="product.info.overview"/>
+        
+        <!-- Move some blocks to new positions -->
+        <move element="product.info.overview" destination="product.info.main" before="product.info.price"/>
+        <move element="container_product_primary_1" destination="product.info.main" before="product.info.price"/>
+
+        <!-- Move some blocks outside the "product.info.main" to manipulate their position inside template file -->
+        <move element="page.main.title" destination="product-view-wrapper"/>
+        <move element="product.info.review" destination="product-view-wrapper"/>
+
+        <!-- Product collateral data (tabs) -->
+        <referenceBlock name="product.info.details" template="Infortis_Base::product/view/details.phtml">
+            <referenceBlock name="product.info.description">
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">Description</argument>
+                    <argument name="priority" xsi:type="string">1</argument>
+                </arguments>
+            </referenceBlock>
+
+            <referenceBlock name="product.attributes">
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">Additional Info</argument>
+                    <argument name="priority" xsi:type="string">2</argument>
+                </arguments>
+            </referenceBlock>
+
+            <block class="Magento\Catalog\Block\Product\View" name="usage.tab" template="Magento_Catalog::product/view/usage.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Usage</argument>
+                    <argument name="priority" xsi:type="string">3</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Catalog\Block\Product\View" name="ingredients.tab" template="Magento_Catalog::product/view/ingredients.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Ingredients</argument>
+                    <argument name="priority" xsi:type="string">4</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Catalog\Block\Product\View" name="videos.tab" template="Magento_Catalog::product/view/videos.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Video</argument>
+                    <argument name="priority" xsi:type="string">6</argument>
+                </arguments>
+            </block>
+
+            <arguments>
+                <argument name="show_tabs" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::showTabs"/>
+            </arguments>
+
+            <!-- Custom static blocks as tabs -->
+            <block class="Magento\Cms\Block\Block" name="product_cms_block1" group="detailed_info">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block_product_tab1</argument>
+                    <argument name="title" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::getStaticBlockTitle">
+                        <param name="id">block_product_tab1</param>
+                    </argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Cms\Block\Block" name="product_cms_block2" group="detailed_info">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block_product_tab2</argument>
+                    <argument name="title" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::getStaticBlockTitle">
+                        <param name="id">block_product_tab2</param>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <referenceBlock name="catalog.product.related">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::getRelatedProductsTemplate"/>
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="product.info.upsell">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::getUpsellProductsTemplate"/>
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="checkout.cart.crosssell">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Infortis_Base::product/list/slider.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

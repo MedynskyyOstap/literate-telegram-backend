@@ -1,0 +1,9 @@
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+    $customerSession = $objectManager->get('Magento\Customer\Model\Session');
+
+    if (!$customerSession->isLoggedIn() && $product->getData('isoffice') == 1) {
+        echo $product->getData('inoffice_content');
+    }
+?>
