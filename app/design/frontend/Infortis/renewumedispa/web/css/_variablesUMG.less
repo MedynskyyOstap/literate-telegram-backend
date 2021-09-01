@@ -1,0 +1,497 @@
+      //
+      //  Infortis Base theme variables,
+      //
+      // Base Google Font theme
+      @import url('https://fonts.googleapis.com/css?family='AZO+SANS+LT':300,400,500,600,700&display=swap');
+      @import url('https://fonts.googleapis.com/css?family='POPPINS':300,400,500,600,700&display=swap');
+      undefined
+  
+      @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+      
+      //
+      //  Layout grid
+      //  _____________________________________________
+      
+      //  Variables for layout columns depending on layout used
+      @layout-column-sidebar__width__layout-3columns: 4;
+      @layout-column-main__width__layout-3columns: @layout-column__width - @layout-column-sidebar__width__layout-3columns - @layout-column-sidebar__width__layout-3columns;
+      @layout-column-sidebar__offset: 2%;
+      
+      //
+      //  Interface elements
+      //  _____________________________________________
+      
+      @interface-element__height__base: 40px;
+      
+      //
+      //  Sidebar
+      //  _____________________________________________
+      
+      @sidebar-block__title__vert-padding: 15px;
+      @sidebar-block__title__margin-bottom: 15px;
+      @sidebar-block__title__line-height: 24px;
+      @sidebar-block__title__font-size: 19px;
+      @sidebar-block__margin-bottom: 30px;
+      
+      //
+      //  Design
+      //  _____________________________________________
+      
+      //
+      //  Product listings
+      //  _____________________________________________
+      
+      @product-listing__swatch__bottom-space: 5px;
+      
+      // Base color theme
+      @custom-primary-color: #2964D8;
+      @custom-secondry-color: #212529;
+      @custom-tertiary-color: #6A5E6D;
+      @custom-headings-color: #6A5E6D;
+      @custom-additional-color: #6A5E6D;
+      
+      @custom-color-1: #ffffff;
+      @custom-color-2: #d5d5d5;
+      @custom-color-3: #f5f5f5;
+      @custom-color-4: #f1f1f1;
+      @custom-color-5: #000;
+      @custom-color-6: #CFAD93;
+      @custom-color-7: ;
+      
+      // Base Font Family theme
+      @custom-headings-font-family:  "'POPPINS'", sans-serif;
+      @custom-primary-font-family:   "'POPPINS'", serif;
+      @custom-secondry-font-family:  "'AZO SANS LT'", serif;
+      
+      @custom-icons: @icon-font;
+      @custom-fontawesome: 'FontAwesome';
+      
+      // Base Font Size theme
+      @custom-primary-font-size: 16px;
+      
+      //Base Links
+      @custom-link-color: #6A5E6D;
+      @custom-link-color-hover: #6A5E6D ;
+      @custom-link-weight: 400;
+      @custom-link-weight-hover: 400;
+      @custom-link-decoration: undefined;
+      @custom-link-decoration-hover: underline;
+      
+      //Primary Buttons
+      @button-primary-bg-color: #CFAD91;
+      @button-primary-txt-color: #FFF;
+      @button-primary-bg-color-hover: #CFAD93;
+      @button-primary-txt-color-hover: #FFFFFF;
+      @button-primary-active-bg-color: #CFAD93;
+      @button-primary-active-txt-color: #FFFFFF;
+      @button-text-transform: ;
+      @button-font-weight: 400;
+      @button-letter-spacing: 2px;
+      @button-transition: 0.2s all;
+      @button-font-family: @custom-secondry-font-family;
+      @button-border-radius: 0;
+      @button-border: 2PX SOLID;
+      @button-border-hover: 2PX SOLID;
+      @button-font-size: 18PX;
+      
+      //GO TO CHECKOUT, PLACE ORDER, SAVE SUBSCRIPTION BUTTONS
+      @main-button-font-size: @button-font-size + 2px;
+      
+      //Header Custom Colors
+      @header-custom-txt-color: @custom-additional-color;
+      @header-custom-link-color: @custom-link-color;
+      @header-custom-link-bg: transparent;
+      @header-custom-link-color-hover: @custom-link-color-hover;
+      @header-custom-link-bg-hover: transparent;
+      @header-primary-container-bg: #fff;
+      @header-counter-bg-color: @custom-primary-color;
+      @header-counter-txt-color: #fff;
+      
+      //Header border
+      @header-border-width: 0;
+      @header-border-color: @custom-secondry-color;
+      
+      //Counter
+      @counter-bg-color: @custom-primary-color;
+      @counter-txt-color: @custom-color-1;
+      
+      //List Style Types
+      @custom-list-style-type: disc;
+      
+      //Menu Tabs
+      @menu-bg-parent: #FFF;
+      @menu-bg-color: #FFF;
+      @menu-txt-color: #2964D8;
+      @menu-border: 0px solid transparent;
+  
+      @menu-bg-color-hover: transparent;
+      @menu-txt-color-hover: #2964D8;
+      @menu-border-hover: 0px solid transparent;
+      @menu-txt-decoration-hover: unset;
+  
+      @menu-bg-color-active: transparent;
+      @menu-txt-color-active: #2964D8;
+      @menu-txt-decoration-active: unset;
+  
+      @menu-text-transform: CAPITALIZE;
+      @menu-font-size: 14PX;
+      @menu-font-weight: 500;
+      @custom-menu-font: @custom-primary-font-family;
+      @menu-letter-spacing: normal;
+      @menu-item-border: 0px solid transparent;
+      @menu-item-border-hover: 0px solid transparent;
+      
+      //Dropdown Sub-Menu
+      @dropdown-menu-bg: #FFF;
+      @dropdown-menu-color: #2964D8;
+  
+      @dropdown-menu-bg-hover: #fff;
+      @dropdown-menu-color-hover: #2964D8;
+      @dropdown-item-decoration: unset;
+  
+      @dropdown-item-active-bg: #fff;
+      @dropdown-item-active-color: #2964D8;
+  
+      @dropdown-menu-text-transform: CAPITALIZE;
+      @dropdown-menu-font-weight: 300;
+      @dropdown-menu-font-size: 13PX;
+      @dropdown-menu-letter-spacing: normal;
+  
+      @dropdown-parent-border-top: 3px #a6d8f1 solid;
+      @dropdown-item-border: 0px solid @custom-primary-color;
+      @dropdown-item-border-hover: 0px solid @custom-primary-color;
+      @dropdown-item-border-top: 0px solid transparent;
+  
+      //SKU & Category Promos
+      @sku-promo-background-color: undefined;
+      @sku-promo-txt-color: #6A5E6D;
+      @sku-promo-font-family: 'POPPINS';
+      @sku-promo-font-size: 16px;
+      @sku-promo-font-weight: 600;
+      @sku-category-background-color: #f5f5f5;
+      @sku-category-txt-color: #6A5E6D;
+      @sku-category-font-family: 'POPPINS';
+      @sku-category-font-size: 18px;
+      @sku-category-font-weight: 700;
+      
+      //Interface icons /category view toolbar icons, pagination/
+      @custom-icon-bg-color: @custom-primary-color;
+      @cusom-icon-color: @custom-color-1;
+      @custom-icon-bg-color-hover:@custom-secondry-color;
+      @cusom-icon-color-hover:#fff;
+      @cusom-icon-active-bg-color:@custom-secondry-color;
+      @cusom-icon-active-color:#fff;
+      @custom-pagination-active-bg-color: @custom-secondry-color;
+      @custom-pagination-active-txt-color: #fff;
+      
+      //'Add to' Links
+      @add-link-bg-color: @custom-primary-color;
+      @add-link-icon-color:@custom-color-1;
+      @add-link-bg-color-hover: @custom-secondry-color;
+      @add-link-icon-color-hover: @custom-color-1;
+      @add-link-label-color: @custom-primary-color;
+      @add-link-label-color-hover: @custom-secondry-color;
+      @add-link-border: 0px solid @custom-primary-color;
+      @add-link-border-hover: 0px solid @custom-primary-color;
+      
+      //Card price
+      @custom-price-color: @custom-primary-color;
+      @custom-price-font-size: @custom-primary-font-size + 4px;
+      @custom-price-font-weight: normal;
+      
+      //Star ratings color
+      @star-rating-color-active: @custom-primary-color;
+      
+      //Iconbox(icon with class 'ib')
+      //TODO: need to test
+      @iconbox-bg-color: @custom-primary-color;
+      @iconbox-icon-color:#fff;
+      @iconbox-bg-color-hover:@custom-secondry-color;
+      @iconbox-icon-color-hover: #fff;
+      @iconbox-border-radius: 50%;
+      @iconbox-border: 0 solid @custom-primary-color;
+      @iconbox-border-hover: 0 solid @custom-primary-color;
+      
+      //Social Icons
+      @social-icon-bg-color: #6A5E6D;
+      @social-icon-color: #fff;
+      @social-icon-bg-color-hover: #2964D8;
+      @social-icon-color-hover: #fff;
+      @social-icon-radius: 50%;
+      @social-icon-border: 0px solid #fff;
+      
+      //Promobanners on checkout
+      @promo-shipping-bg: #6A5E6D;
+      @promo-shipping-color: #FFF;
+      @promo-shipping-title-font-size: 22px;
+      @promo-shipping-desc-font-size: 14px;
+      @promo-shipping-text-transform: uppercase;
+      @promo-shipping-font-family: 'POPPINS';
+      @promo-login-bg: #2964D8;
+      @promo-login-color: #FFF;
+      @promo-login-title-font-size: 22px;
+      @promo-login-desc-font-size: 14px;
+      @promo-login-text-transform: uppercase;
+      @promo-login-font-family: 'POPPINS';
+      
+      //Headings
+      //H1
+      @heading-h1-color: #6A5E6D;
+      @heading-h1-font-size: 32;
+      @heading-h1-font-weight: 500;
+      @heading-h1-font-family: 'POPPINS';
+      @heading-h1-text-transform: undefined;
+      @heading-h1-line-height: 1.8;
+      
+      //H2
+      @heading-h2-color: #6A5E6D;
+      @heading-h2-font-size: 30;
+      @heading-h2-font-weight: 500;
+      @heading-h2-font-family: 'POPPINS';
+      @heading-h2-text-transform: undefined;
+      @heading-h2-line-height: 1.8;
+      
+      //H3
+      @heading-h3-color: #6A5E6D;
+      @heading-h3-font-size: 30PX;
+      @heading-h3-font-weight: 500;
+      @heading-h3-font-family: 'POPPINS';
+      @heading-h3-text-transform: undefined;
+      @heading-h3-line-height: 1.8;
+      
+      //H4
+      @heading-h4-color: #6A5E6D;
+      @heading-h4-font-size: 20;
+      @heading-h4-font-weight: 500;
+      @heading-h4-font-family: 'POPPINS';
+      @heading-h4-text-transform: undefined;
+      @heading-h4-line-height: 1.8;
+      
+      //H5
+      @heading-h5-color: #B0AAB1;
+      @heading-h5-font-size: 18PX;
+      @heading-h5-font-weight: 500;
+      @heading-h5-font-family: 'POPPINS';
+      @heading-h5-text-transform: undefined;
+      @heading-h5-line-height: 1.8;
+      
+      //Paragraphs
+      @paragraph-color: #000;
+      @paragraph-font-size: 16;
+      @paragraph-font-family: 'POPPINS';
+      @paragraph-line-height: 1.5;
+      
+      //Horizontal Links
+      //links inside an 'ul' with 'links' class
+      //TODO: need to test
+      @links-color-hover: '';
+      @links-bg-color-hover: '';
+      
+      //Product Lables (NEW, SALE, etc.)
+      @label-new-bg-color: #6A5E6D;
+      @label-new-txt-color: #fff;
+      @label-sale-bg-color: #6A5E6D;
+      @label-sale-txt-color: #fff;
+      @label-custom-bg-color: #6A5E6D;
+      @label-custom-txt-color: #fff;
+  
+      //Product page tabs
+      @product-tab-bg-color: @custom-secondry-color;
+      @product-tab-txt-color: @custom-color-1;
+      @product-tab-bg-color-active: @custom-primary-color;
+      @product-tab-txt-color-active: @custom-color-1;
+      @produc-tab-border: 0 solid @custom-primary-color;
+      
+      //Mini-Cart
+      @cart-bg-color: #fff;
+      @cart-txt-color: @custom-additional-color;
+      @cart-link-color: @custom-link-color;
+      @cart-link-color-hover: @custom-link-color-hover;
+      @cart-border-width: 0px;
+      @cart-border-color: @custom-primary-color;
+      
+      //Mobile Menu Tabs
+      @mobile-menu-bg-color: #FFF;
+      @mobile-menu-txt-color: #2964D8;
+  
+      @mobile-menu-bg-color-hover: #6A5E6D;
+      @mobile-menu-txt-color-hover: undefined;
+  
+      @mobile-menu-bg-color-active: #6A5E6D;
+      @mobile-menu-txt-color-active: undefined;
+      @mobile-header-bg-color: @header-primary-container-bg;
+      
+      //Content of Mobile Headers Tabs
+      @mobile-submenu-bg-color: #6A5E6D;
+      @mobile-submenu-txt-color: undefined;
+      @mobile-submenu-bg-color-hover: @mobile-menu-bg-color-hover;
+      @mobile-submenu-txt-color-hover: @mobile-menu-txt-color-hover;
+      @mobile-submenu-bg-color-active: @mobile-menu-bg-color-hover;
+      @mobile-submenu-txt-color-active: @mobile-menu-txt-color-hover;
+      @mobile-submenu-item-border: 0px solid rgba(189,190,192,0.3);
+      @mobile-submenu-item-border-hover: @mobile-submenu-item-border;
+      @mobile-submenu-item-border-active: @mobile-submenu-item-border;
+      @mobile-submenu-item-border-top: 0 solid transparent;
+      @mobile-content-txt-transform: undefined;
+      @mobile-content-font-size: undefined;
+      @mobile-content-font-family: undefined;
+      @mobile-content-font-weight: undefined;
+      
+      @mobile-content-link-color: #6A5E6D;
+      @mobile-content-link-color-hover: #6A5E6D ;
+      
+      //HomeTabs(Bestsellers, Trendings, ...)
+      @tabs-bg-color: #6A5E6D;
+      @tabs-txt-color: #fff;
+      @tabs-bg-color-hover: #2964D8;
+      @tabs-txt-color-hover: #fff;
+      @tabs-bg-color-active: #2964D8;
+      @tabs-txt-color-active: #fff;
+      
+      //Footer
+      @footer-bg-color: #CFAD91;
+      @footer-txt-color: #6A5E6D;
+      @footer-border-width: 0;
+      @footer-border-top-color: #6A5E6D;
+      @footer-tagline-color: #fff;
+      @footer-tagline-font-size: 32px;
+      @footer-tagline-font-weight: 400;
+      @footer-tagline-font-family: 'POPPINS';
+      
+      //Footer Top Container
+      @footer-top-bg-color: #6A5E6D;
+      @footer-top-txt-color: #fff;
+      
+      //Footer Primary Container
+      @footer-primary-bg-color: #CFAD91;
+      @footer-primary-txt-color: #6A5E6D;
+      
+      //Footer links
+      @footer-link-color: #FFF;
+      @footer-link-color-hover: #6A5E6D ;
+      
+      //Footer Bottom Container
+      @footer-bottom-bg-color: #000;
+      @footer-bottom-txt-color: #fff;
+      @footer-copyright-color: #fff;
+      @footer-copyright-color-hover: #fff;
+      //  Infortis Base theme variables
+      //
+      
+      //
+      //  Layout grid
+      //  _____________________________________________
+      
+      //  Variables for layout columns depending on layout used
+      @layout-column-sidebar__width__layout-3columns: 4;
+      @layout-column-main__width__layout-3columns: @layout-column__width - @layout-column-sidebar__width__layout-3columns - @layout-column-sidebar__width__layout-3columns;
+      @layout-column-sidebar__offset: 2%;
+      
+      //
+      //  Interface elements
+      //  _____________________________________________
+      
+      @interface-element__height__base: 40px;
+      
+      //
+      //  Sidebar
+      //  _____________________________________________
+      
+      @sidebar-block__title__vert-padding: 15px;
+      @sidebar-block__title__margin-bottom: 15px;
+      @sidebar-block__title__line-height: 24px;
+      @sidebar-block__title__font-size: 19px;
+      @sidebar-block__margin-bottom: 30px;
+      
+      //
+      //  Design
+      //  _____________________________________________
+      
+      //
+      //  Main colors
+      //  ---------------------------------------------
+      
+      @theme-color__primary__light: #e4f7fc;
+      @theme-color__primary__lighter: #b6ebf6;
+      @theme-color__primary: #5bd2ec;
+      @theme-color__primary__darker: #27b4d3;
+      @theme-color__primary__dark: #12829b;
+      @theme-color__primary__transparent: rgba(91, 210, 236, 0.85);
+      
+      @theme-color__secondary__light: #f55856;
+      @theme-color__secondary__lighter: #f88887;
+      @theme-color__secondary: #f55856;
+      @theme-color__secondary__darker: #f4413e;
+      @theme-color__secondary__dark: #d9100d;
+      
+      @theme-color__gray__light: #ddd;
+      @theme-color__gray__lighter: #c5c5c5;
+      @theme-color__gray: #aaa;
+      @theme-color__gray__darker: #888;
+      @theme-color__gray__dark: #666;
+      
+      @theme-color__bg-gray__light: #fafafa;
+      @theme-color__bg-gray__lighter: #f5f5f5;
+      @theme-color__bg-gray: #eee;
+      
+      @theme-color__sale: #f12b63;
+      
+      //
+      //  Borders
+      //  ---------------------------------------------
+      
+      @global-border-color__dark: #ccc;
+      @global-border-color: #e5e5e5;
+      @global-border-color__light: #f5f5f5;
+      
+      //
+      //  Product
+      //  _____________________________________________
+      
+      @product__interface-element__height: @interface-element__height__base;
+      @product__addto-icon-onimage__padding: 4px;
+      @product__addto-icon__space-between: 3px;
+      @product__addto-icon__size: @product__interface-element__height;
+      
+      //
+      //  Product listings
+      //  _____________________________________________
+      
+      @product-listing__swatch__bottom-space: 5px;
+      
+      //
+      //  Typography
+      //  _____________________________________________
+      
+      @h2__font-size-desktop: ceil((@font-size__base * 2.14)); //30
+      
+      //
+      //  Focus
+      //  ---------------------------------------------
+      
+      @focus__border-color: #51a7e8;
+      
+      //
+      //  Blank theme variables (copy from Blank theme)
+      //  _____________________________________________
+      
+      //
+      //  Typography
+      //  ---------------------------------------------
+      
+      //  Fonts
+      @font-family-name__base: 'Open Sans';
+      @font-family__base: @font-family-name__base, @font-family__sans-serif;
+      
+      //
+      //  Sidebar
+      //  ---------------------------------------------
+      
+      @sidebar__background-color: @color-white-smoke;
+      
+      .customer-toplink {
+        img {
+          margin: 10px 0;
+        }
+      }
+      

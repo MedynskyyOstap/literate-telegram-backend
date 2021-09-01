@@ -1,0 +1,47 @@
+<?php
+// @codingStandardsIgnoreFile
+/* @var $block \Magento\Framework\View\Element\Template */
+
+  //TODO: make separate module and move all logic in Block
+  $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+  $storeManager  = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+  $scopeConfig = $objectManager->get('\Magento\Framework\App\Config\ScopeConfigInterface');
+  $storeID = $storeManager->getStore()->getStoreId();
+  $freeShipValue = $scopeConfig->getValue('carriers/freeshipping/free_shipping_subtotal', \Magento\Store\Model\ScopeInterface::SCOPE_STORES, $storeID);
+
+  $cart = $objectManager->get('\Magento\Checkout\Model\Cart');
+  $cartSubTotal = $cart->getQuote()->getSubtotal();
+  $grandTotal = $cart->getQuote()->getGrandTotal();
+  $taxRate = 0;
+
+  $cartSubTotal != 0.0000 ? $taxRate = round($grandTotal / $cartSubTotal / 100, 2) : $taxRate = 0;
+
+  $items = $cart->getQuote()->getAllItems();
+  $cartTotal = 0;
+
+  foreach($items as $item) {
+    $sku = $item->getSku();
+    //calculate free ship only for products
+    if (!strpos($sku, 'TREAT') && !strpos($sku, 'MEMBER') && !strpos($sku, 'GIFT')) {
+        $cartTotal += ($item->getPrice() * $item->getQty());
+    }
+  }
+
+  $freeShipTotal = round(($cartTotal + ($cartTotal * $taxRate)), 2);
+?>
+<div>
+    <i class="fas fa-shipping-fast"></i>
+    <?php if (round($freeShipTotal) == 0) {?>
+        <span>
+            Free Shipping for orders over $<?= $freeShipValue ?>
+        </span>
+    <?php } else if ( round($freeShipTotal) != 0 && $freeShipTotal < $freeShipValue) { ?>
+        <span>
+            Only $<?= round(($freeShipValue - $freeShipTotal), 2) ?> away from Free Shipping
+        </span>
+    <?php } else if ( round($freeShipTotal) != 0 && $freeShipTotal >= $freeShipValue) { ?>
+        <span>
+            Congrats! You have got Free Shipping
+        </span>
+    <?php } ?>
+</div>

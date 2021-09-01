@@ -1,0 +1,401 @@
+//
+//  Infortis Base theme variables
+//
+
+// Base Google Font theme
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,700&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+//
+//  Layout grid
+//  _____________________________________________
+
+//  Variables for layout columns depending on layout used
+@layout-column-sidebar__width__layout-3columns: 4;
+@layout-column-main__width__layout-3columns: @layout-column__width - @layout-column-sidebar__width__layout-3columns - @layout-column-sidebar__width__layout-3columns;
+@layout-column-sidebar__offset: 2%;
+
+//
+//  Interface elements
+//  _____________________________________________
+
+@interface-element__height__base: 40px;
+
+//
+//  Sidebar
+//  _____________________________________________
+
+@sidebar-block__title__vert-padding: 15px;
+@sidebar-block__title__margin-bottom: 15px;
+@sidebar-block__title__line-height: 24px;
+@sidebar-block__title__font-size: 19px;
+@sidebar-block__margin-bottom: 30px;
+
+//
+//  Design
+//  _____________________________________________
+
+
+
+//
+//  Product listings
+//  _____________________________________________
+
+@product-listing__swatch__bottom-space: 5px;
+
+
+
+// Base color theme
+@custom-primary-color: #152f52; 
+@custom-secondry-color: #5b6d86;
+@custom-tertiary-color: #3a3a3a;
+@custom-headings-color: #152f52;
+@custom-additional-color: #3a3a3a;
+
+@custom-color-1: #ffffff;
+@custom-color-2: #d5d5d5;
+@custom-color-3: #f5f5f5;
+@custom-color-4: #f1f1f1;
+
+// Base Font Family theme
+@custom-headings-font-family:  'Lato', Arial, Helvetica, sans-serif;
+@custom-primary-font-family:   'Open Sans', Arial, Helvetica, sans-serif;
+@custom-secondry-font-family:  'Open Sans', Arial, Helvetica, sans-serif;
+// @custom-additional-font-family: 'Lobster', cursive;
+
+@custom-icons: @icon-font;
+@custom-fontawesome: 'FontAwesome';
+
+
+// Base Font Size theme
+@custom-primary-font-size: 16px;
+//@custom-secondry-font-size: ;
+//@custom-additional-font-size: ;
+
+//Base Links
+@custom-link-color: #337ab7;
+@custom-link-color-hover: @custom-primary-color;
+
+//Primary Buttons
+@button-primary-bg-color: @custom-primary-color;
+@button-primary-txt-color: @custom-color-1;
+@button-primary-bg-color-hover: @custom-secondry-color;
+@button-primary-txt-color-hover: @custom-color-1;
+@button-primary-active-bg-color: @custom-secondry-color;
+@button-primary-active-txt-color: @custom-color-1;
+@button-text-transform: uppercase;
+@button-font-weight: 400;
+@button-font-family: @custom-secondry-font-family;
+@button-border-radius: 0;
+@button-border: 0px solid @custom-primary-color;
+@button-font-size: @custom-primary-font-size; //16px
+
+//Header Custom Colors
+@header-custom-txt-color: @custom-color-1;
+@header-custom-link-color: #569EC2;
+@header-custom-link-bg: transparent;
+@header-custom-link-color-hover: #152f52;
+@header-custom-link-bg-hover: transparent;
+@header-primary-container-bg: linear-gradient(to bottom, #144e98, #164b8d, #194881, #1d4476, #214470);
+
+//Header border
+@header-border-width: 5px;
+@header-border-color: #569EC2;
+//Counter 
+@counter-bg-color: @custom-secondry-color;
+@counter-txt-color: @custom-color-1;
+
+//List Style Types
+@custom-list-style-type: circle;
+
+//Menu Tabs
+@menu-bg-color: #ccc;
+@menu-txt-color:#000;
+@menu-bg-color-hover: #214470;
+@menu-txt-color-hover: @custom-color-1;
+@menu-bg-color-active: #214470;
+@menu-txt-color-active:  @custom-color-1;
+@menu-text-transform: capitalize;
+@menu-font-size: 12px;
+@menu-font-weight: 600;
+@custom-menu-font: Verdana, sans-serif;
+@menu-letter-spacing: normal;
+@menu-item-border: 2px solid transparent;
+@menu-item-border-hover: 2px solid transparent;
+
+//Dropdown Sub-Menu
+@dropdown-menu-bg: #EDEDED;
+@dropdown-menu-color: #000;
+@dropdown-menu-color-hover: #fff;
+@dropdown-menu-bg-hover: #214470;
+@dropdown-item-active-color:  #fff;
+@dropdown-item-active-bg:  #214470;
+@dropdown-menu-text-transform: capitalize;
+@dropdown-menu-font-weight: 600;
+@dropdown-menu-font-size: 13px;
+@dropdown-menu-letter-spacing: normal;
+@dropdown-item-border: 1px solid @custom-color-1;
+@dropdown-item-border-hover: 1px solid @custom-color-1;
+@dropdown-item-border-top: 1px solid @custom-color-1;
+
+//Interface icons /category view toolbar icons, pagination/
+@custom-icon-bg-color: @custom-primary-color;
+@cusom-icon-color: @custom-color-1;
+@custom-icon-bg-color-hover:@custom-secondry-color;
+@cusom-icon-color-hover:#fff;
+@cusom-icon-active-bg-color:@custom-secondry-color;
+@cusom-icon-active-color:#fff;
+@custom-pagination-active-bg-color: @custom-secondry-color;
+@custom-pagination-active-txt-color: #fff;
+
+//'Add to' Links
+@add-link-bg-color: @custom-primary-color;
+@add-link-icon-color:@custom-color-1;
+@add-link-bg-color-hover: @custom-secondry-color;
+@add-link-icon-color-hover: @custom-color-1;
+@add-link-label-color: @custom-primary-color;
+@add-link-label-color-hover: @custom-secondry-color;
+@add-link-border: 0px solid @custom-primary-color;
+@add-link-border-hover: 0px solid @custom-primary-color;
+
+
+//Card price 
+@custom-price-color: @custom-primary-color;
+@custom-price-font-size: @custom-primary-font-size + 4px;
+@custom-price-font-weight: normal;
+
+//Star ratings color
+@star-rating-color-active: @custom-primary-color;
+
+//Iconbox(icon with class 'ib')
+//TODO: need to test
+@iconbox-bg-color: @custom-primary-color;
+@iconbox-icon-color:#fff;
+@iconbox-bg-color-hover:@custom-secondry-color;
+@iconbox-icon-color-hover: #fff;
+@iconbox-border-radius: 50%;
+@iconbox-border: 0 solid @custom-primary-color;
+@iconbox-border-hover: 0 solid @custom-primary-color;
+
+//Social Icons
+@social-icon-bg-color: @custom-primary-color;
+@social-icon-color: @custom-color-1;
+@social-icon-bg-color-hover: @custom-secondry-color;
+@social-icon-color-hover: @custom-color-1;
+@social-icon-radius: 50%;
+@social-icon-border: 0 solid @custom-primary-color;
+
+//Banners
+@caption-bg-color: '';
+
+//Horizontal Links
+//links inside an 'ul' with 'links' class
+//TODO: need to test
+@links-color-hover: '';
+@links-bg-color-hover: '';
+
+//Product Lables (NEW, SALE, etc.)
+@label-new-bg-color: @custom-primary-color;
+@label-new-txt-color: #fff;
+@label-sale-bg-color: @custom-primary-color;
+@label-sale-txt-color: #fff;
+@label-custom-bg-color: @custom-primary-color; //TODO: need to be test
+@label-custom-txt-color: #fff;  //TODO: need to be test
+
+//Product page tabs
+@product-tab-bg-color: @custom-secondry-color;
+@product-tab-txt-color: @custom-color-1;
+@product-tab-bg-color-active: @custom-primary-color;
+@product-tab-txt-color-active: @custom-color-1;
+@produc-tab-border: 0 solid @custom-primary-color;
+
+//Mini-Cart
+@cart-bg-color: #fff;
+@cart-txt-color: @custom-additional-color;
+@cart-link-color: @custom-link-color;
+@cart-link-color-hover: @custom-link-color-hover;
+@cart-border-width: 0px;
+@cart-border-color: @custom-primary-color;
+
+//Mobile Menu Tabs
+@mobile-menu-bg-color: #ccc;;
+@mobile-menu-txt-color: #000;
+@mobile-menu-bg-color-hover: #214470;
+@mobile-menu-txt-color-hover: #fff;
+@mobile-menu-bg-color-active: #214470;
+@mobile-menu-txt-color-active: #fff;
+@mobile-header-bg-color: @header-primary-container-bg;
+
+//Content of Mobile Headers Tabs
+@mobile-submenu-bg-color: #ccc;
+@mobile-submenu-txt-color: #000;
+@mobile-submenu-bg-color-hover: @dropdown-menu-color-hover;
+@mobile-submenu-txt-color-hover: @dropdown-menu-bg-hover;
+@mobile-submenu-bg-color-active: @dropdown-item-active-bg;
+@mobile-submenu-txt-color-active: @dropdown-item-active-color;
+@mobile-submenu-item-border: 1px solid @custom-color-1;
+@mobile-submenu-item-border-hover: 1px solid @custom-color-1;
+@mobile-submenu-item-border-active: 1px solid @custom-color-1;
+@mobile-submenu-item-border-top: 1px solid @custom-color-1;
+@mobile-content-bg-color: transparent;
+@mobile-content-txt-transform: capitalize;
+@mobile-content-font-size: 13px;
+@mobile-content-font-weight: 400;
+@mobile-content-txt-color: @custom-primary-color;
+@mobile-content-link-color: @custom-primary-color;
+@mobile-content-link-color-hover: @custom-secondry-color;
+
+//HomeTabs(Bestsellers, Trendings, ...)
+@tabs-bg-color: @custom-secondry-color;
+@tabs-txt-color: @custom-color-1;
+@tabs-bg-color-hover: @custom-primary-color@custom-color-1;
+@tabs-txt-color-hover: @custom-color-1;
+@tabs-bg-color-active: @custom-primary-color;
+@tabs-txt-color-active: @custom-color-1;
+
+//Footer 
+@footer-bg-color: #fff;
+@footer-txt-color:@custom-additional-color;
+@footer-border-width: 5px;
+@footer-border-top-color: @custom-additional-color;
+@footer-tagline-color: @custom-primary-color;
+
+//Footer Top Container
+@footer-top-bg-color: #fff;
+@footer-top-txt-color: @custom-additional-color;
+
+//Footer Primary Container
+@footer-primary-bg-color: #fff;
+@footer-primary-txt-color: @custom-additional-color;
+
+//Footer links
+@footer-link-color: @custom-link-color;
+@footer-link-color-hover: @custom-link-color-hover;
+
+//Footer Bottom Container
+@footer-bottom-bg-color: #fff;
+@footer-bottom-txt-color: @custom-link-color;
+@footer-copyright-color: @custom-link-color;
+@footer-copyright-color-hover: @custom-link-color-hover;
+//  Infortis Base theme variables
+//
+
+//
+//  Layout grid
+//  _____________________________________________
+
+//  Variables for layout columns depending on layout used
+@layout-column-sidebar__width__layout-3columns: 4;
+@layout-column-main__width__layout-3columns: @layout-column__width - @layout-column-sidebar__width__layout-3columns - @layout-column-sidebar__width__layout-3columns;
+@layout-column-sidebar__offset: 2%;
+
+//
+//  Interface elements
+//  _____________________________________________
+
+@interface-element__height__base: 40px;
+
+//
+//  Sidebar
+//  _____________________________________________
+
+@sidebar-block__title__vert-padding: 15px;
+@sidebar-block__title__margin-bottom: 15px;
+@sidebar-block__title__line-height: 24px;
+@sidebar-block__title__font-size: 19px;
+@sidebar-block__margin-bottom: 30px;
+
+//
+//  Design
+//  _____________________________________________
+
+//
+//  Main colors
+//  ---------------------------------------------
+
+@theme-color__primary__light: #e4f7fc;
+@theme-color__primary__lighter: #b6ebf6;
+@theme-color__primary: #5bd2ec;
+@theme-color__primary__darker: #27b4d3;
+@theme-color__primary__dark: #12829b;
+@theme-color__primary__transparent: rgba(91, 210, 236, 0.85);
+
+@theme-color__secondary__light: #f55856;
+@theme-color__secondary__lighter: #f88887;
+@theme-color__secondary: #f55856;
+@theme-color__secondary__darker: #f4413e;
+@theme-color__secondary__dark: #d9100d;
+
+@theme-color__gray__light: #ddd;
+@theme-color__gray__lighter: #c5c5c5;
+@theme-color__gray: #aaa;
+@theme-color__gray__darker: #888;
+@theme-color__gray__dark: #666;
+
+@theme-color__bg-gray__light: #fafafa;
+@theme-color__bg-gray__lighter: #f5f5f5;
+@theme-color__bg-gray: #eee;
+
+@theme-color__sale: #f12b63;
+
+//
+//  Borders
+//  ---------------------------------------------
+
+@global-border-color__dark: #cccccc;
+@global-border-color: #e5e5e5;
+@global-border-color__light: #f5f5f5;
+
+//
+//  Product
+//  _____________________________________________
+
+@product__interface-element__height: @interface-element__height__base;
+@product__addto-icon-onimage__padding: 4px;
+@product__addto-icon__space-between: 3px;
+@product__addto-icon__size: @product__interface-element__height;
+
+//
+//  Product listings
+//  _____________________________________________
+
+@product-listing__swatch__bottom-space: 5px;
+
+//
+//  Typography
+//  _____________________________________________
+
+@h2__font-size-desktop: ceil((@font-size__base * 2.14)); //30
+
+//
+//  Focus
+//  ---------------------------------------------
+
+@focus__border-color: #51a7e8;
+
+//
+//  Blank theme variables (copy from Blank theme)
+//  _____________________________________________
+
+//
+//  Typography
+//  ---------------------------------------------
+
+//  Fonts
+@font-family-name__base: 'Open Sans';
+@font-family__base: @font-family-name__base, @font-family__sans-serif;
+
+//
+//  Sidebar
+//  ---------------------------------------------
+
+@sidebar__background-color: @color-white-smoke;
+
+
+
+.customer-toplink{
+    img{
+        margin: 10px 0px;
+    }
+}
