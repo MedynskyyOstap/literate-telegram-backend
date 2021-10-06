@@ -1,0 +1,49 @@
+<?php
+  //boolean variable was made for storebuild automation to eneble/disable blocks
+  $isCarousels = true;
+  $servicesUrl = "cosmetic-services";
+  $productsUrl = "products-site";
+
+  if($isCarousels) { ?>
+    <section class="promo-carousel">
+        <div class="container">
+            <div class="inner-wrapper">
+                <?php echo $this->getLayout()
+                                ->createBlock(
+                                  "Infortis\Base\Block\Product\ProductList\Featured",
+                                  "popular-procedures",
+                                  [
+                                    'data' => [
+                                        'category_id'=>"3488",
+                                        'block_name'=>'Popular Procedures',
+                                        'hide_button'=>"1",
+                                    ]
+                                  ]
+                                  )
+                                ->setData('area', 'frontend')
+                                ->setTemplate("product/list_featured_slider.phtml")
+                                ->toHtml(); ?>
+                <a class="action primary" href="<?= $block->getBaseUrl().$servicesUrl ?>" title="View All Services">VIEW ALL SERVICES</a>
+            </div>
+        <div class="inner-wrapper">
+            <?php echo $this->getLayout()
+                                ->createBlock(
+                                  "Infortis\Base\Block\Product\ProductList\Featured",
+                                  "bestsellers",
+                                  [
+                                    'data' => [
+                                        'category_id'=>"3487",
+                                        'block_name'=>'Bestsellers',
+                                        'hide_button'=>"1",
+                                    ]
+                                  ]
+                                  )
+                                ->setData('area', 'frontend')
+                                ->setTemplate("product/list_featured_slider.phtml")
+                                ->toHtml(); ?>
+              <a class="action primary" href="<?= $block->getBaseUrl().$productsUrl ?>" title="View All Products">VIEW ALL PRODUCTS</a>
+        </div>
+      </div>
+      <div class="bg-mask"></div>
+    </section>
+  <?php } ?>

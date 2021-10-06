@@ -1,0 +1,16 @@
+pipelines:
+  privatepharma:
+    group: default
+    label_template: "${COUNT}-${env:VERSION}"
+    lock_behavior: none
+    environment_variables:
+      REGISTRY_FQDN: 808062382794.dkr.ecr.us-east-1.amazonaws.com/
+      REGISTRY: custom_image
+      VERSION: 0.0.0
+    materials:
+      git:
+        git: https://github.com/JOyakawa1/aws_eks_infrastructure.git
+        shallow_clone: false
+        auto_update: true
+        branch: master
+    template: magento-terraform-deploy

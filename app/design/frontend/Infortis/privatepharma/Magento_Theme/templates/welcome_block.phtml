@@ -1,0 +1,28 @@
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $store = $objectManager->create('Magento\Store\Model\Store');
+    $storeInformation = $objectManager->create('Magento\Store\Model\Information');
+    $storeInfo = $storeInformation->getStoreInformationObject($store);
+
+    //boolean variable was made for storebuild automation to eneble/disable blocks
+    $isWelcome = true;
+    $isCtaButton = true;
+
+    $aboveHeading = 'Welcome to';
+    $heading = $storeInfo->getData("name");
+    $content = 'With 20 years of aesthetic industry experience, LAB Aesthetics is focused on creating beautifully natural treatment outcomes, utilizing the very best-in-class techniques and innovative technologies available today. We take a highly customized and collaborative approach with our clients, beginning with thorough, in-depth consultations, education about the techniques we will use, and individualized treatment protocols that produce truly transformative and impressive results.';
+    $ctaButtonUrl = 'about-us';
+
+    if($isWelcome) { ?>
+        <section class="welcome container">
+            <h5><?= $aboveHeading ?></h5>
+            <h1><?= $heading ?></h1>
+            <div class="inner-content">
+                <p class="secondary"><?= $content ?></p>
+            <?php if($isCtaButton) : ?>
+                <div style="text-align: center;">
+                    <a class="action primary" href=" <?= $block->getBaseUrl().$ctaButtonUrl ?>" title="More about us">more about us</a>
+                </div>
+            <?php endif; ?>
+        </section>
+    <?php } ?>

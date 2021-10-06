@@ -1,0 +1,486 @@
+//
+//  Infortis Base theme variables
+//
+
+// Base Google Font theme
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+//Linking Custom Web Font Example below:
+
+// @font-face {
+//   font-family: 'Proxima Nova';
+//   src: url('../fonts/ProximaNova-Regular.eot');
+//   src:
+//     url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+//     url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
+//     url('../fonts/ProximaNova-Regular.woff') format('woff'),
+//     url('../fonts/ProximaNova-Regular.ttf') format('truetype'),
+//     url('../fonts/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+//
+//  Layout grid
+//  _____________________________________________
+
+//  Variables for layout columns depending on layout used
+@layout-column-sidebar__width__layout-3columns: 4;
+@layout-column-main__width__layout-3columns: @layout-column__width - @layout-column-sidebar__width__layout-3columns - @layout-column-sidebar__width__layout-3columns;
+@layout-column-sidebar__offset: 2%;
+
+//
+//  Interface elements
+//  _____________________________________________
+
+@interface-element__height__base: 40px;
+
+//
+//  Sidebar
+//  _____________________________________________
+
+@sidebar-block__title__vert-padding: 15px;
+@sidebar-block__title__margin-bottom: 15px;
+@sidebar-block__title__line-height: 24px;
+@sidebar-block__title__font-size: 19px;
+@sidebar-block__margin-bottom: 30px;
+
+//
+//  Design
+//  _____________________________________________
+
+//
+//  Product listings
+//  _____________________________________________
+
+@product-listing__swatch__bottom-space: 5px;
+
+// Base color theme
+@custom-primary-color: #0c6cac;
+@custom-secondry-color: #f7991a;
+@custom-headings-color: #000;
+
+@custom-primary-text-color: #333333;
+@custom-additional-color: #000000;
+
+@custom-color-1: #ffffff;
+@custom-color-2: #d5d5d5;
+@custom-color-3: #f5f5f5;
+@custom-color-4: #f1f1f1;
+@custom-color-5: #666666;
+@custom-color-6: #757575;
+@custom-color-7: #f5f5f5;
+
+// Base Font Family theme
+@custom-headings-font-family: "Open Sans", serif;
+@custom-primary-font-family: 'Roboto', sans-serif;
+
+@custom-icons: @icon-font;
+@custom-fontawesome: 'FontAwesome';
+
+// Base Font Size theme
+@custom-primary-font-size: 16px;
+
+//Base Links
+@custom-link-color: #333333;
+@custom-link-color-hover: #006bb4;
+@custom-link-txt-decoration-hover: unset;
+@custom-link-font-weight: 600;
+
+//Primary Buttons
+@button-primary-bg-color: #333333;
+@button-primary-txt-color: #fff;
+@button-primary-bg-color-hover: #006bb4;
+@button-primary-txt-color-hover: #fff;
+@button-primary-active-bg-color: #006bb4;
+@button-primary-active-txt-color: #fff;
+@button-text-transform: capitalize;
+@button-font-weight: 400;
+@button-font-family: @custom-primary-font-family;
+@button-border-radius: 0;
+@button-border: unset;
+@button-border-hover: unset;
+@button-font-size: 16px;
+
+//Header Custom Colors
+@header-custom-txt-color: @custom-primary-text-color;
+@header-custom-link-color: @custom-primary-text-color;
+@header-custom-link-bg: transparent;
+@header-custom-link-color-hover: @custom-color-1;
+@header-custom-link-bg-hover: transparent;
+@header-link-font-size: 11px;
+@header-link-font-weight: 400;
+@header-link-text-transform: uppercase;
+
+@header-phone-link-color: @custom-primary-color;
+@header-phone-link-color-hover: @custom-secondry-color;
+
+@header-account-link-color: @custom-secondry-color;
+@header-account-link-color-hover: @custom-secondry-color;
+
+@header-primary-container-bg: transparent;
+@header-container-bg: transparent;
+
+//header account menu dropdown
+@header-menu-item-color: @dropdown-menu-color;
+@header-menu-item-bg: @dropdown-menu-bg;
+@header-menu-item-color-hover: @dropdown-menu-color-hover;
+@header-menu-item-bg-hover: @dropdown-menu-bg-hover;
+
+//Header border
+@header-border-width: 0;
+@header-border-color: transparent;
+
+//Counter
+@counter-bg-color: @custom-primary-color;
+@counter-txt-color: @custom-color-1;
+
+//List Style Types
+@custom-list-style-type: disc;
+
+//Menu Tabs
+@menu-bg-color: #fff;
+@menu-txt-color: #333333;
+@menu-bg-color-hover: transparent;
+@menu-txt-color-hover: #006bb4;
+@menu-bg-color-active: transparent;
+@menu-txt-color-active: #006bb4;
+@menu-text-transform: uppercase;
+@menu-font-size: 16px;
+@menu-font-weight: 400;
+@custom-menu-font: @custom-headings-font-family;
+@menu-letter-spacing: normal;
+@menu-item-border: 0 solid transparent;
+@menu-item-border-hover: 0 solid transparent;
+
+//Dropdown Sub-Menu
+@dropdown-menu-bg: #fff;
+@dropdown-menu-color: #333333;
+@dropdown-menu-color-hover: #006bb4;
+@dropdown-menu-bg-hover: #fff;
+@dropdown-item-active-color: #006bb4;
+@dropdown-item-active-bg: #fff;
+@dropdown-menu-text-transform: undefined;
+@dropdown-menu-font-weight: 400;
+@dropdown-menu-font-size: 14px;
+@dropdown-menu-letter-spacing: normal;
+@dropdown-menu-border-top: 0 solid transparent;
+@dropdown-item-border: 0 solid transparent;
+@dropdown-item-border-hover:  0 solid transparent;
+@dropdown-item-border-top: 0 solid transparent;
+@dropdown-item-txt-decoration-hover: none;
+@dropdown-item-font-family: @custom-primary-font-family;
+
+//Interface icons /category view toolbar icons, pagination/
+@custom-icon-bg-color: @custom-color-1;
+@cusom-icon-color: @custom-primary-color;
+@custom-icon-bg-color-hover: @custom-primary-color;
+@cusom-icon-color-hover: @custom-color-1;
+@cusom-icon-active-bg-color: @custom-primary-color;
+@cusom-icon-active-color: @custom-color-1;
+@custom-pagination-active-bg-color: @custom-primary-color;
+@custom-pagination-active-txt-color: #fff;
+
+//'Add to' Links
+@add-link-bg-color: transparent;
+@add-link-icon-color: @custom-primary-text-color;
+@add-link-bg-color-hover: transparent;
+@add-link-icon-color-hover: @custom-secondry-color;
+@add-link-label-color: @custom-headings-color;
+@add-link-label-color-hover: @custom-primary-text-color;
+@add-link-border: 0px solid @custom-primary-color;
+@add-link-border-hover: 0px solid @custom-primary-color;
+
+//Card price on category page
+@custom-price-color: @custom-primary-color;
+@custom-price-font-size: 18px;
+@custom-price-font-weight: 400;
+
+//Card product name on category page
+@product-item-name-color: @custom-headings-color;
+@product-item-font-size: 18px;
+@product-item-font-weight: 400;
+@product-item-line-height: 1.5;
+@product-item-text-transform: none;
+@product-item-text-align: center;
+
+//SKU Heading
+@sku-heading-font-family: @custom-headings-font-family;
+@sku-heading-font-size: 42px;
+@sku-heading-font-weight: 600;
+@sku-heading-txt-color: @custom-headings-color;
+@sku-heading-txt-transform: uppercase;
+@sku-heading-line-height: 1.2;
+
+//CategoryPromo and skuPromo
+@categoryPromo-font-family: @custom-primary-font-family;
+@categoryPromo-font-size: 18px;
+@categoryPromo-txt-color: #333333;
+@categoryPromo-bg-color: #f5f5f5;
+@categoryPromo-font-weight: 700;
+@categoryPromo-line-height: 1.5;
+@categoryPromo-padding: 30px;
+
+@skuPromo-font-family: @custom-primary-font-family;
+@skuPromo-font-size: 16px;
+@skuPromo-txt-color: #333333;
+@skuPromo-bg-color: #f5f5f5;
+@skuPromo-font-weight: 600;
+@skuPromo-line-height: 1.5;
+@skuPromo-padding: 30px;
+
+//Promobanners on checkout
+@promo-shipping-bg: #333333;
+@promo-shipping-color: #000;
+@promo-shipping-title-font-size: 22px;
+@promo-shipping-desc-font-size: 14px;
+@promo-shipping-text-transform: uppercase;
+
+@promo-login-bg: #006bb4;
+@promo-login-color: #000;
+@promo-login-title-font-size: 22px;
+@promo-login-desc-font-size: 14px;
+@promo-login-text-transform: uppercase;
+
+//Star ratings color
+@star-rating-color-active: @custom-primary-color;
+
+//Iconbox(icon with class 'ib')
+//TODO: need to test
+@iconbox-bg-color: transparent;
+@iconbox-icon-color: @custom-primary-text-color;
+@iconbox-bg-color-hover: transparent;
+@iconbox-icon-color-hover: @custom-primary-text-color;
+@iconbox-border-radius: 50%;
+@iconbox-border: 0 solid @custom-primary-color;
+@iconbox-border-hover: 0 solid @custom-primary-color;
+
+//Social Icons
+@social-icon-bg-color: transparent;
+@social-icon-color: #fff;
+@social-icon-bg-color-hover: #006bb4;
+@social-icon-color-hover: #fff;
+@social-icon-radius: 0;
+@social-icon-border: 0 solid @custom-primary-color;
+
+//Banners
+@caption-bg-color: '';
+
+//Horizontal Links
+//links inside an 'ul' with 'links' class
+//TODO: need to test
+@links-color-hover: '';
+@links-bg-color-hover: '';
+
+//Product Lables (NEW, SALE, etc.)
+@label-new-bg-color: #333333;
+@label-new-txt-color: #fff;
+@label-sale-bg-color: #333333;
+@label-sale-txt-color: #fff;
+@label-custom-bg-color: #333333; //TODO: need to be test
+@label-custom-txt-color: #fff;  //TODO: need to be test
+
+//Product page tabs
+@product-tab-bg-color: @custom-secondry-color;
+@product-tab-txt-color: @custom-color-1;
+@product-tab-bg-color-active: @custom-primary-color;
+@product-tab-txt-color-active: @custom-color-1;
+@produc-tab-border: 0 solid @custom-primary-color;
+
+//Mini-Cart
+@cart-bg-color: #fff;
+@cart-txt-color: @custom-primary-text-color;
+@cart-link-color: @custom-link-color;
+@cart-link-color-hover: @custom-link-color-hover;
+@cart-border-width: 0px;
+@cart-border-color: @custom-primary-color;
+
+//Mobile Menu Tabs
+@mobile-menu-bg-color: #006bb4;
+@mobile-menu-txt-color: #fff;
+@mobile-menu-bg-color-hover: #333333;
+@mobile-menu-txt-color-hover: undefined;
+@mobile-menu-bg-color-active: #333333;
+@mobile-menu-txt-color-active: undefined;
+@mobile-header-bg-color: @header-primary-container-bg;
+
+//Content of Mobile Headers Tabs
+@mobile-submenu-bg-color: #333333;
+@mobile-submenu-txt-color: undefined;
+@mobile-submenu-bg-color-hover: @custom-primary-color;
+@mobile-submenu-txt-color-hover: #fff;
+@mobile-submenu-bg-color-active: @custom-primary-color;
+@mobile-submenu-txt-color-active: #fff;
+@mobile-submenu-font-family: @custom-headings-font-family;
+@mobile-submenu-txt-transform: uppercase;
+@mobile-submenu-font-size: 16px;
+@mobile-submenu-font-weight: 600;
+@mobile-submenu-item-border: 1px solid rgba(255, 255, 255, 0.5);
+@mobile-submenu-item-border-hover: 1px solid @custom-color-1;
+@mobile-submenu-item-border-active: 1px solid @custom-color-1;
+@mobile-submenu-item-border-top: 0 solid @custom-color-1;
+@mobile-content-bg-color: @custom-secondry-color;
+@mobile-content-txt-transform: undefined;
+@mobile-content-font-size: undefined;
+@mobile-content-font-weight: undefined;
+@mobile-content-txt-color: @custom-color-1;
+@mobile-content-link-color: #333333;
+@mobile-content-link-color-hover:#006bb4;
+@mobile-content-font-family: @custom-headings-font-family;
+
+//HomeTabs(Bestsellers, Trendings, ...)
+@tabs-bg-color: #333333;
+@tabs-txt-color: #fff;
+@tabs-bg-color-hover: #006bb4;
+@tabs-txt-color-hover: #fff;
+@tabs-bg-color-active: #006bb4;
+@tabs-txt-color-active: #fff;
+
+//Footer
+@footer-bg-color: #006bb4;
+@footer-txt-color: #fff;
+@footer-border-width: 0;
+@footer-border-top-color: #333333;
+@footer-tagline-color: #fff;
+
+//Footer Top Container
+@footer-top-bg-color: #333333;
+@footer-top-txt-color: #fff;
+
+//Footer Primary Container
+@footer-primary-bg-color: #006bb4;
+@footer-primary-txt-color: #fff;
+
+//Footer links
+@footer-link-color: #333333;
+@footer-link-color-hover: #006bb4;
+
+//Footer Bottom Container
+@footer-bottom-bg-color: #000;
+@footer-bottom-txt-color: #fff;
+@footer-copyright-color: #333333;
+@footer-copyright-font-color: 11px;
+@footer-copyright-color-hover:#006bb4;
+//  Infortis Base theme variables
+//
+
+//
+//  Layout grid
+//  _____________________________________________
+
+//  Variables for layout columns depending on layout used
+@layout-column-sidebar__width__layout-3columns: 4;
+@layout-column-main__width__layout-3columns: @layout-column__width - @layout-column-sidebar__width__layout-3columns - @layout-column-sidebar__width__layout-3columns;
+@layout-column-sidebar__offset: 2%;
+
+//
+//  Interface elements
+//  _____________________________________________
+
+@interface-element__height__base: 40px;
+
+//
+//  Sidebar
+//  _____________________________________________
+
+@sidebar-block__title__vert-padding: 15px;
+@sidebar-block__title__margin-bottom: 15px;
+@sidebar-block__title__line-height: 24px;
+@sidebar-block__title__font-size: 19px;
+@sidebar-block__margin-bottom: 30px;
+
+//
+//  Design
+//  _____________________________________________
+
+//
+//  Main colors
+//  ---------------------------------------------
+
+@theme-color__primary__light: #e4f7fc;
+@theme-color__primary__lighter: #b6ebf6;
+@theme-color__primary: #5bd2ec;
+@theme-color__primary__darker: #27b4d3;
+@theme-color__primary__dark: #12829b;
+@theme-color__primary__transparent: rgba(91, 210, 236, 0.85);
+
+@theme-color__secondary__light: #f55856;
+@theme-color__secondary__lighter: #f88887;
+@theme-color__secondary: #f55856;
+@theme-color__secondary__darker: #f4413e;
+@theme-color__secondary__dark: #d9100d;
+
+@theme-color__gray__light: #ddd;
+@theme-color__gray__lighter: #c5c5c5;
+@theme-color__gray: #aaa;
+@theme-color__gray__darker: #888;
+@theme-color__gray__dark: #666;
+
+@theme-color__bg-gray__light: #fafafa;
+@theme-color__bg-gray__lighter: #f5f5f5;
+@theme-color__bg-gray: #eee;
+
+@theme-color__sale: #f12b63;
+
+//
+//  Borders
+//  ---------------------------------------------
+
+@global-border-color__dark: #ccc;
+@global-border-color: #e5e5e5;
+@global-border-color__light: #f5f5f5;
+
+//
+//  Product
+//  _____________________________________________
+
+@product__interface-element__height: @interface-element__height__base;
+@product__addto-icon-onimage__padding: 4px;
+@product__addto-icon__space-between: 3px;
+@product__addto-icon__size: @product__interface-element__height;
+
+//
+//  Product listings
+//  _____________________________________________
+
+@product-listing__swatch__bottom-space: 5px;
+
+//
+//  Typography
+//  _____________________________________________
+
+@h2__font-size-desktop: ceil((@font-size__base * 2.14)); //30
+
+//
+//  Focus
+//  ---------------------------------------------
+
+@focus__border-color: #51a7e8;
+
+//
+//  Blank theme variables (copy from Blank theme)
+//  _____________________________________________
+
+//
+//  Typography
+//  ---------------------------------------------
+
+//  Fonts
+@font-family-name__base: 'Open Sans';
+@font-family__base: @font-family-name__base, @font-family__sans-serif;
+
+//
+//  Sidebar
+//  ---------------------------------------------
+
+@sidebar__background-color: @color-white-smoke;
+
+.customer-toplink {
+  img {
+    margin: 10px 0;
+  }
+}

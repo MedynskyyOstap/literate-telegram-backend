@@ -1,0 +1,60 @@
+.welcome {
+  box-sizing: border-box;
+  padding: 5% 0 1%;
+  text-align: center;
+
+  h1 {
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 82px;
+    text-align: center;
+    color: #646464;
+    margin-bottom: 20px;
+  }
+
+  h5 {
+    font-size: 18px;
+    font-family: @custom-primary-font-family;
+  }
+
+  .inner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    p {
+      position: relative;
+      text-align: center;
+      max-width: 626px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+  }
+
+  .action.primary {
+    min-width: 280px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .welcome {
+    margin: 3% auto 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .welcome.container h2 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .welcome h1 {
+    font-size: 58px;
+    line-height: 1;
+    margin-top: 50px;
+  }
+}

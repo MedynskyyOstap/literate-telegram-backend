@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceContainer name="base-main-top-container">
+            <block class="SolideWebservices\Flexslider\Block\Flexslider" name="flexslider_privatepharma" template="SolideWebservices_Flexslider::flexslider.phtml">
+                <action method="setCode"><argument name="code" xsi:type="string">privatepharma</argument></action>
+                <action method="setStartSlideId"><argument name="start_slide_id" xsi:type="string">1</argument></action>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="main">
+            <block class="Magento\Framework\View\Element\Template" name="welcome" template="Magento_Theme::welcome_block.phtml" before="-"/>
+            <block class="Magento\Framework\View\Element\Template" name="cta" template="Magento_Theme::cta.phtml" after="welcome"/>
+            <block class="Magento\Framework\View\Element\Template" name="reward-block" template="Magento_Theme::reward_block.phtml" after="cta"/>
+            <block class="Magento\Framework\View\Element\Template" name="promo-carousels" template="Magento_Theme::promo_carousels.phtml" after="reward-block"/>
+
+        </referenceBlock>
+	</body>
+</page>
