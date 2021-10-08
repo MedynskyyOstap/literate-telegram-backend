@@ -1,0 +1,94 @@
+<?php
+  //boolean variable was made for storebuild automation to eneble/disable blocks
+  /**
+   * @var $block \Scimus\ApiStoreInfo\Block\PromoBlock
+   */
+  $isCarousels = $block->isCarouselEnabled();
+
+  $isCarousel1 = $block->isCarousel1Enabled();
+  $isCarousel2 = $block->isCarousel2Enabled();
+  $isCarousel3 = $block->isCarousel3Enabled();
+  
+  $carousel1Title = $block->getCarousel1Title();
+  $carousel2Title = $block->getCarousel2Title();
+  $carousel3Title = $block->getCarousel3Title();
+
+  $carousel1CategoryId = $block->getCarousel1CategoryId();
+  $carousel2CategoryId = $block->getCarousel2CategoryId();
+  $carousel3CategoryId = $block->getCarousel3CategoryId();
+
+  $servicesUrl = "cosmetic-services";
+  $productsUrl = "products-site";
+
+  if($isCarousels) { ?>
+    <section class="promo-carousel">
+      <div class="container">
+        if ($isCarousel1) {
+          <div class="inner-wrapper">
+            <?php echo $this->getLayout()
+                            ->createBlock(
+                                "Infortis\Base\Block\Product\ProductList\Featured",
+                                "popular-procedures",
+                                [
+                                  'data' => [
+                                      'category_id'=>$carousel1CategoryId,
+                                      'block_name'=>$carousel1Title,
+                                      'hide_button'=>"1",
+                                  ]
+                                ]
+                                )
+                              ->setData('area', 'frontend')
+                              ->setTemplate("product/list_featured_slider.phtml")
+                              ->toHtml(); 
+                              ?>
+            <a class="action primary" href="<?= $block->getBaseUrl().$servicesUrl ?>" title="View Popular Services">VIEW POPULAR SERVICES</a>
+          </div>
+        }
+        if ($isCarousel2) {
+          <div class="inner-wrapper">
+            <?php echo $this->getLayout()
+                            ->createBlock(
+                                "Infortis\Base\Block\Product\ProductList\Featured",
+                                "bestsellers",
+                                [
+                                  'data' => [
+                                      'category_id'=>$carousel2CategoryId,
+                                        'block_name'=>$carousel2Title,
+                                      'hide_button'=>"1",
+                                  ]
+                                ]
+                                )
+                              ->setData('area', 'frontend')
+                              ->setTemplate("product/list_featured_slider.phtml")
+                              ->toHtml(); 
+                              ?>
+            <a class="action primary" href="<?= $block->getBaseUrl().$productsUrl ?>" title="View Best Products">VIEW BEST PRODUCTS</a>
+          </div>
+        }
+        if ($isCarousel3) {
+          <div class="inner-wrapper">
+            <?php echo $this->getLayout()
+                            ->createBlock(
+                                "Infortis\Base\Block\Product\ProductList\Featured",
+                                "favourite",
+                                [
+                                  'data' => [
+                                      'category_id'=>$carousel3CategoryId,
+                                      'block_name'=>$carousel3Title,
+                                      'hide_button'=>"1",
+                                  ]
+                                ]
+                                )
+                              ->setData('area', 'frontend')
+                              ->setTemplate("product/list_featured_slider.phtml")
+                              ->toHtml(); 
+                              ?>
+            <a class="action primary" href="<?= $block->getBaseUrl().$productsUrl ?>" title="View Favourite Products">VIEW FAVOURITE PRODUCTS</a>
+          </div>
+        }
+      </div>
+    <div class="bg-mask"></div>
+    </section>
+  <?php
+  } 
+?>

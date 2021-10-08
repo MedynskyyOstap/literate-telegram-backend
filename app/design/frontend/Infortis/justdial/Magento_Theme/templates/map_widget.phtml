@@ -1,0 +1,16 @@
+<?php
+    $isWidget = true;
+    $widget = '<iframe src="https://snazzymaps.com/embed/99497" width="100%" height="400px" style="border:none;"></iframe>'
+?>
+
+<section class="news-section">
+   <div class="container">
+        <?php echo $this->getLayout()->createBlock("Magento\Newsletter\Block\Subscribe")->setTemplate("Magento_Newsletter::subscribe.phtml")->toHtml() ?>
+    </div>
+</section>
+
+<?php if($isWidget) { ?>
+    <section class="map-section">
+        <?= $widget ?>
+    </section>
+<?php } ?>

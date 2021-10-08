@@ -1,0 +1,274 @@
+//You can override custom theme styles here
+
+.categoryPromo {
+  color: @categoryPromo-txt-color;
+  font-size: @categoryPromo-font-size;
+  font-weight: @categoryPromo-font-weight !important;
+  font-family: @categoryPromo-font-family;
+  line-height: @categoryPromo-line-height;
+  background-color: @categoryPromo-bg-color;
+  padding: @categoryPromo-padding;
+
+  * {
+    color: @categoryPromo-txt-color;
+  }
+
+  p {
+    padding-bottom: 0;
+  }
+}
+
+.skuPromo {
+  color: @skuPromo-txt-color;
+  font-size: @skuPromo-font-size;
+  font-weight: @skuPromo-font-weight !important;
+  font-family: @skuPromo-font-family;
+  line-height: @skuPromo-line-height;
+  background-color: @skuPromo-bg-color;
+  padding: @skuPromo-padding;
+
+  * {
+    color: @skuPromo-txt-color;
+  }
+
+  p {
+    padding-bottom: 0;
+  }
+}
+//Fix overlap product page --More from this brand--
+#related\.brand\.product\.tab li.item.product.product-item {
+  height: 432px !important;
+  padding-bottom: 74px !important;
+}
+
+.account.page-layout-2columns-left .sidebar-main,
+.account.page-layout-2columns-left .sidebar-additional {
+  width: 24.3%;
+}
+
+.account.page-layout-2columns-left .column.main {
+  width: 75.7%;
+}
+
+.ac-below-768 {
+  display: none;
+}
+
+.cms-index-index #mp_rw_socials_earning {
+  height: 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-y-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-grid-3 {
+  width: 33%;
+}
+
+.flex-grid-2 {
+  width: 50%;
+}
+
+.p-right-30 {
+  padding-right: 30px;
+}
+
+.p-left-30 {
+  padding-left: 30px;
+}
+
+.cms-index-index .main.container {
+  padding: 0;
+}
+
+// Fixed display of selectors
+.limiter {
+  display: inline-block;
+}
+
+// Fixed recaptcha alignment
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+// Fixed select arrow display on IOS devices
+select {
+  -webkit-appearance: menulist;
+}
+
+.customer-subscriptions-index .toolbar .limiter {
+  white-space: nowrap;
+}
+
+// Fixed alignment of Account Dashboard on mobile view
+@media screen and (max-width: 565px) {
+  #CC_NUM-error {
+    margin: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .account .toolbar {
+    flex-direction: column !important;
+  }
+
+  .account .column.main .toolbar .sorter {
+    margin-top: 20px !important;
+  }
+
+  .checkout-index-index .payment-method-content .fieldset > .field:not(.choice) .label {
+    white-space: nowrap;
+  }
+
+  .account .column.main .toolbar {
+    display: flex !important;
+  }
+
+  .customer-subscriptions-index .toolbar .limiter {
+    margin: 10px 0 !important;
+  }
+}
+
+// Fixed inconsistence of font-sizes on mobile view
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  .column.main .action.edit,
+  .column.main .action.view {
+    font-size: 16px;
+  }
+}
+
+// Fixed behavior of survey question arrow
+.payment-options.servey-options._collapsible.opc-payment-additional.em-ordercomment.comment.last.active .payment-option-title .action-toggle::after {
+  transform: rotate(180deg) !important;
+}
+
+// Fixed alignment of account drop-down menu
+.links-wrapper-separators-left .links > li {
+  margin-left: 0;
+}
+
+// Fixed compare icon wrapping on Ipad
+.header-container .link.compare {
+  white-space: nowrap;
+}
+
+//Fixed appearance of store title in mobile view in header
+@media screen and (max-width: 768px) {
+  h1.logo strong {
+    display: none;
+  }
+
+  .mobile-top .phone-number {
+    display: none;
+  }
+}
+
+//Fixed Back to Website on mobile view
+.mobile-top #website-link {
+  list-style: none;
+}
+
+.mobile-top #website-link a {
+  color: @custom-color-1;
+}
+
+// Fixed Logo in Header on mobile view
+h1.logo {
+  display: flex;
+  justify-content: center;
+
+  a {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 330px;
+      padding: 0 15px;
+      margin: 10px auto;
+    }
+  }
+}
+
+// IE11
+.ie11,
+.ie11 body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.ie11 .main-container {
+  height: 100%;
+}
+
+html.ie11 .page-wrapper,
+html.ie11 body .page-wrapper {
+  min-height: 100%;
+}
+
+.ie10 .page-wrapper,
+.ie11 .page-wrapper {
+  height: auto;
+}
+//---
+@media screen and (min-width: 768px) {
+  .abs-margin-for-forms-desktop,
+  .fieldset .legend,
+  .column:not(.sidebar-main) form .actions-toolbar,
+  .column:not(.sidebar-additional) form .actions-toolbar,
+  .login-container .fieldset::after {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body:not(.cms-index-index) {
+    #header-container {
+      height: 100%;
+    }
+
+    .main-container {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .mask-container .bg-mask {
+    top: 15%;
+  }
+}
+
+//Contact Us Page
+
+@media screen and (min-width: 768px) {
+  .contact-index-index {
+    .g-recaptcha,
+    .column:not(.sidebar-main) form .actions-toolbar,
+    .column:not(.sidebar-additional) form .actions-toolbar {
+      margin-left: 25.8%;
+    }
+  }
+}
