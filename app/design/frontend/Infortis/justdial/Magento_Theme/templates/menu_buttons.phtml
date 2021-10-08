@@ -1,0 +1,27 @@
+<?php
+    //boolean variable was made for storebuild automation to eneble/disable blocks
+    $isAdditionalMenuButtons = true;
+    $isLink1 = true;
+    $isLink2 = true;
+
+    $link1Value = 'Consultation';
+    $link1Url = '';
+    $link2Value = 'Book Now';
+    $link2Url = '';
+
+    //TODO:check if link is external and add target_blank attribute
+
+    if($isAdditionalMenuButtons) : ?>
+        <div class="link-container">
+            <?php if($isLink1) : ?>
+                <a class="level-top action primary" href="<?= $block->getBaseUrl().$link1Url ?>consultation">
+                    <span><?= $link1Value ?></span>
+                </a>
+            <?php endif;?>
+            <?php if($isLink2) : ?>
+                <a class="level-top action primary" href="<?= $block->getBaseUrl().$link2Url ?>request-appointment">
+                    <span><?= $link2Value ?></span>
+                </a>
+            <?php endif;?>
+        </div>
+    <?php endif; ?>

@@ -1,0 +1,98 @@
+<div class="mobile-bar">
+    <span class="menu-tab">menu btn</span>
+	<div class="mainnav">
+		<ul>
+			<li class="item-mobile-bottom">
+				<a href="tel:+16305371187"  class="call">call</a>
+				<p class="label">call</p>
+			</li>
+			<li class="item-mobile-bottom">
+				<a href="<?php echo $block->getBaseUrl(); ?>customer/account" class="myaccount-icons menu-ot">account</a>
+				<p class="label">account</p>
+			</li>
+			<li class="item-mobile-bottom">
+				<a href="<?php echo $block->getBaseUrl(); ?>lab-aesthetics-specials"  class="tag">specials</a>
+				<p class="label">specials</p>
+			</li>
+			<li class="item-mobile-bottom">
+				<a href="https://labaesthetics.zenoti.com/SignIn.aspx" target="_blank" class="appt-icons">Appointment</a>
+				<p class="label">PATIENT PORTAL</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+require(['jquery'], function($){
+
+    $(document).ready(function($) {
+
+		$("body").addClass('mobile-bar-update');
+
+		$(".menu-tab").click(function(){
+			$(".mobile-bar").toggleClass("active");
+			$(".social-box").removeClass("active");
+		});
+		$(".mainnav .menu-ot").click(function(){
+			$(".menu-bh").toggleClass("active");
+		});
+		$(".menu-bh .close").click(function(){
+			$(".menu-bh").removeClass("active");
+		});
+		$(".myaccount .menu").click(function(){
+			$(".myaccountmenu").toggleClass("active");
+		});
+		$(".myaccountmenu .close").click(function(){
+			$(".myaccountmenu").removeClass("active");
+		});
+		$(".apf-icon").click(function(){
+			$(".apf-box").toggleClass("active");
+		});
+		$(".apf-box .close").click(function(){
+			$(".apf-box").removeClass("active");
+		});
+		$(".mainnav .socail-icon").click(function(){
+			$(".social-box").toggleClass("active");
+		});
+		$(".social-box .close").click(function(){
+			$(".social-box").removeClass("active");
+		});
+
+		$(document).click(function() {
+			$(".social-box").removeClass("active");
+		});
+		$('.mainnav .socail-icon').click(function(e){
+			e.stopPropagation();
+		});
+		$(".mainnav .mail-icon").click(function(){
+			$(".ft-menu-list").toggleClass("active");
+			$('.mobile-bar .menu-bh').removeClass("active");
+		});
+		$(".ft-menu-list .close").click(function(e){
+			$(".ft-menu-list").removeClass("active");
+			e.stopPropagation();
+		});
+
+		$('.mainnav .myaccount-icons').click(function(e){
+			$(".menu-bh").removeClass("active");
+			e.stopPropagation();
+		});
+
+		$('.mainnav .menu-ot').click(function(e){
+			$(this).toggleClass("active");
+			$("#main-menu-mobile").removeClass("open");
+			$(".ft-menu-list").removeClass("active");
+			e.stopPropagation();
+		});
+
+		$(document).on("click", function(e){
+			if(
+				$(e.target).closest($(".item-mobile-bottom")).length == 0 &&
+				$(".item-mobile-bottom > a").hasClass("active")
+			){
+				$('.item-mobile-bottom > a').removeClass('active');
+			}
+		});
+	});
+});
+</script>

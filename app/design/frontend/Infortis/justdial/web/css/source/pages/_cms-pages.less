@@ -1,0 +1,250 @@
+.about-section.container {
+  max-width: 949px;
+  margin: 5% auto;
+
+  .description {
+    max-width: 628px;
+    padding-bottom: 45px;
+    margin: 0 auto;
+  }
+
+  .content-box {
+    margin-top: 60px;
+
+    &:nth-of-type(3) {
+      .img-container {
+        .b-mask {
+          right: 20px;
+          top: 20px;
+          bottom: 82px;
+          left: 82px;
+        }
+      }
+    }
+  }
+
+  .img-container {
+    padding: 50px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0;
+    width: 50%;
+
+    .b-mask {
+      position: absolute;
+      z-index: -1;
+      top: 20px;
+      left: 20px;
+      right: 82px;
+      bottom: 82px;
+      background: #f4ebe6;
+    }
+  }
+
+  .content-container {
+    width: 50%;
+    padding: 20px 50px 0;
+    box-sizing: border-box;
+  }
+}
+
+.b-line {
+  width: 100%;
+  height: 1px;
+  background-color: #697a89;
+}
+
+.provider-section.container {
+  max-width: 949px;
+  margin: 5% auto;
+
+  .content-box {
+    margin: 55px auto 10px;
+
+    p {
+      padding-top: 20px;
+    }
+  }
+
+  .img-container {
+    margin-right: 50px;
+
+    img {
+      width: 374px;
+      max-width: unset;
+    }
+  }
+}
+
+.testimonial-section.container {
+  max-width: 900px;
+  margin: 5% auto;
+
+  .t-box {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  .g-container {
+    max-width: 487px;
+    margin: 10% auto 0;
+
+    h3 {
+      margin-bottom: 0;
+      margin-left: 15px;
+    }
+  }
+}
+
+.services-section.container {
+  margin: 5% auto 0;
+  max-width: 944px;
+
+  .description {
+    max-width: 674px;
+    margin: 0 auto;
+  }
+
+  .items-container {
+    margin: 55px auto 0;
+    justify-content: space-between;
+
+    .item {
+      width: 305px;
+      height: 419px;
+      background-color: #f4ebe6;
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin: 0 0 auto;
+      }
+
+      .action.primary {
+        width: 195px;
+        text-align: center;
+        line-height: 52px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  section.container,
+  section .container {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .categorypath-cosmetic-services {
+    .main.container,
+    section.container {
+      max-width: 992px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .cms-page-view {
+    .main.container,
+    section.container {
+      max-width: 100%;
+    }
+  }
+
+  .about-section .container {
+    .img-container {
+      margin-bottom: 20px;
+    }
+
+    .img-container,
+    .description h2 {
+      text-align: center;
+    }
+  }
+
+  .services-section.container .items-container .item {
+    width: calc(100% / 2.05);
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .provider-section.container {
+    .img-container {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .content-box {
+      flex-direction: column;
+      align-items: center;
+
+      h2,
+      h5 {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .about-section.container {
+    .content-container {
+      width: 90%;
+    }
+
+    .img-container {
+      width: 100%;
+      padding: 40px;
+    }
+  }
+
+  .provider-section.container .img-container img {
+    width: 100%;
+  }
+
+  .services-section.container .items-container .item {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .about-section.container {
+    .img-container {
+      width: 100%;
+      padding: 0 0 20px 0;
+
+      .b-mask {
+        top: -20px;
+        left: -20px;
+        right: 36px;
+        bottom: 30px;
+      }
+    }
+
+    .content-container {
+      width: 100%;
+    }
+
+    .content-box:nth-of-type(3) .img-container .b-mask {
+      right: -20px;
+      top: -20px;
+      bottom: 56px;
+      left: 36px;
+    }
+  }
+
+  .services-section.container .items-container .item {
+    height: 400px;
+  }
+}

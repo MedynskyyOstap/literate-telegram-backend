@@ -1,0 +1,34 @@
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $storeInformation = $objectManager->create('Magento\Store\Model\Information');
+    $store = $objectManager->create('Magento\Store\Model\Store');
+    $storeInfo = $storeInformation->getStoreInformationObject($store);
+
+    $scopeConfig = $objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface');
+    $email = $scopeConfig->getValue('trans_email/ident_general/email', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+
+
+    $phone = $storeInfo->getPhone();
+    $phoneLink = preg_replace('/[^0-9]/', "", $phone);
+    $streetLine1 = $storeInfo->getData("street_line1");
+    $streetLine2 = $storeInfo->getData("street_line2");
+    $city = $storeInfo->getData("city");
+    $postcode = $storeInfo->getData("postcode");
+?>
+
+<div class="grid12-12 footer-block2" >
+   <div class="flex-row">
+          <span class="c-icon-map-pin c-icon"></span>
+           <p class="secondary"><?php echo $streetLine1.', '.$streetLine2.',' ?></br> <?php echo $city.', '.$postcode ?></p>
+   </div>
+   <div class="flex-row">
+         <span class="c-icon-phone c-icon"></span>
+         <p class="secondary"><a href="tel:+1<?php echo $phoneLink?>" ><?php echo $phone ?></a></p>
+   </div>
+   <div class="flex-row">
+         <span class="c-icon-mail  c-icon"></span>
+         <p class=" secondary flex-column">
+            <a href="mailto:<?php echo $email?>" ><?php echo $email?></a>
+         </p>
+   </div>
+</div>

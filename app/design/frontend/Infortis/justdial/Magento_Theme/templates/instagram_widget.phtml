@@ -1,0 +1,19 @@
+<?php
+   //boolean variable was made for storebuild automation to eneble/disable blocks
+    $isInstaWidget = true;
+
+    $instaName = '@premium';
+    $widget = "<script src='https://cdn.lightwidget.com/widgets/lightwidget.js'></script><iframe title='InstagramWidget' src='https://cdn.lightwidget.com/widgets/180ea2ca82705ad8999fd05ed5f88bbd.html' scrolling='no' allowtransparency='true' class='lightwidget-widget' style='width:100%;border:0;overflow:hidden;'></iframe>";
+    $instaLink = 'https://www.instagram.com/lab_aesthetics/';
+
+    if ($isInstaWidget) { ?>
+        <section class="insta-section ">
+            <div class="container">
+                <h2><?= $instaName ?></h2>
+                <!-- LightWidget WIDGET -->
+                <?= $widget ?>
+                <a class="action primary" href="<?= $instaLink ?>" target="_blank" style="padding: 0 5%;"><span class="c-icon-instagram" style="vertical-align: inherit;"></span> FOLLOW US ON INSTAGRAM</a>
+            </div>
+            <div class="bg-mask"></div>
+        </div>
+    <?php } ?>

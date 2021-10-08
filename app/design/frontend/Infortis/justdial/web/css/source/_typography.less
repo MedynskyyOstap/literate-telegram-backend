@@ -1,0 +1,532 @@
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .lib-font-face(
+    @family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/opensans/light/opensans-300',
+    @font-weight: 300,
+    @font-style: normal
+  );
+
+  .lib-font-face(
+    @family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/opensans/regular/opensans-400',
+    @font-weight: 400,
+    @font-style: normal
+  );
+
+  .lib-font-face(
+    @family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/opensans/semibold/opensans-600',
+    @font-weight: 600,
+    @font-style: normal
+  );
+
+  .lib-font-face(
+    @family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/opensans/bold/opensans-700',
+    @font-weight: 700,
+    @font-style: normal
+  );
+
+  body {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: @custom-primary-font-size !important;
+  }
+
+  @font-face {
+    font-family: 'icons-blank-theme';
+    src: url('../fonts/Blank-Theme-Icons/Blank-Theme-Icons.woff2') format('woff2'), url('../fonts/Blank-Theme-Icons/Blank-Theme-Icons.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  //
+  //  Headings with bottom border
+  //  ---------------------------------------------
+
+  h1.border-bottom,
+  h2.border-bottom,
+  h3.border-bottom,
+  h4.border-bottom,
+  h5.border-bottom,
+  h6.border-bottom {
+    padding-bottom: 10px;
+    border-bottom: 1px solid @global-border-color;
+    &:extend(.abs-global-border-color all);
+  }
+
+  .items {
+    .lib-list-reset-styles();
+  }
+}
+
+//
+//  Common
+//  _____________________________________________
+
+// Custom typo variables
+@hfonts: @custom-headings-font-family;
+.hstyle() {
+  // font-weight: 400;
+  line-height: 1;
+}
+
+//
+//  Common
+//  _____________________________________________
+h1 {
+  font-size: 32px;
+  color: #000;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: @hfonts;
+  .hstyle();
+}
+
+h2 {
+  font-size: 30px;
+  color: #000;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: @hfonts;
+  .hstyle();
+}
+
+h3 {
+  font-size: 26px;
+  color: #000;
+  font-weight: 400;
+  font-family: @hfonts;
+  .hstyle();
+}
+
+h4 {
+  font-size: 20px;
+  color: #000;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: @hfonts;
+  .hstyle();
+}
+
+h5 {
+  font-size: 18px;
+  color: #000;
+  font-weight: 400;
+  font-family: @hfonts;
+  .hstyle();
+}
+
+h6 {
+  font-size: 14px;
+  color: @custom-primary-color;
+  font-weight: 500;
+  font-family: @hfonts;
+  .hstyle();
+}
+
+.action.primary {
+  background-color: @button-primary-bg-color !important;
+  color: @button-primary-txt-color !important;
+  font-size: @button-font-size !important;
+  font-family: @button-font-family;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 40px !important;
+  text-transform: @button-text-transform;
+  font-weight: @button-font-weight;
+  border-radius: @button-border-radius !important;
+  border: @button-border;
+
+  &:hover,
+  &:active {
+    background-color: @button-primary-bg-color-hover !important;
+    color: @button-primary-txt-color-hover !important;
+  }
+}
+
+button,
+#pointofsale_box #tools button,
+.form.check-code .action.primary,
+.review-form .action.submit.primary,
+.cart.table-wrapper .actions-toolbar > .action,
+.action-gift,
+.block-cart-failed .action.continue,
+.cart-container .form-cart .action.continue,
+.gift-item-block .title,
+.gift-options .actions-toolbar .secondary .action,
+#minicart-content-wrapper .actions .primary button {
+  font-family: @button-font-family !important;
+  background-color: @button-primary-bg-color;
+  color: @button-primary-txt-color;
+  font-size: @button-font-size !important;
+  text-transform: @button-text-transform;
+  font-weight: @button-font-weight !important;
+  border-radius: @button-border-radius;
+  border: @button-border;
+
+  &:hover {
+    background-color: @button-primary-bg-color-hover;
+    color: @button-primary-txt-color-hover !important;
+  }
+}
+
+.control {
+  .ui-datepicker-trigger.v-middle {
+    background-color: transparent;
+  }
+}
+
+.actions-toolbar > .primary button,
+.cart-summary .actions-toolbar > .primary button,
+.cart-summary .form.giftregistry .fieldset .action.primary,
+.paypal-review .block .actions-toolbar .action.primary,
+.block-compare .action.compare,
+.cart-summary .actions-toolbar > .primary .cart.table-wrapper .actions-toolbar > .action,
+.cart-summary .actions-toolbar > .primary .action-gift .modal-footer .action.primary {
+  font-family: @button-font-family;
+  background-color: @button-primary-bg-color !important;
+  color: @button-primary-txt-color !important;
+  text-transform: @button-text-transform;
+  font-weight: @button-font-weight;
+  font-size: @button-font-size !important;
+  border-radius: @button-border-radius;
+  border: @button-border;
+
+  &:hover {
+    background-color: @button-primary-bg-color-hover !important;
+    color: @button-primary-txt-color-hover !important;
+  }
+}
+
+.column.main {
+  .block {
+    .title {
+      strong {
+        font-size: @custom-primary-font-size + 8px;
+        color: @custom-primary-color;
+      }
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+* {
+  word-break: normal !important;
+}
+
+p,
+p.primary {
+  font-family: @custom-primary-font-family;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+  line-height: 1.6;
+  padding-bottom: 2.5rem;
+}
+
+p.secondary {
+  font-family: @custom-primary-font-family;
+  font-size: @custom-primary-font-size - 2px;
+  color: @custom-headings-color;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-bottom: 2.5rem;
+}
+
+p.small {
+  font-family: @custom-primary-font-family;
+  font-size: 13px;
+  color: @custom-headings-color;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-bottom: 2.5rem;
+}
+
+p.no-padding {
+  padding: 0;
+}
+
+p.centered {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+input[type="datetime"],
+input[type="email"] {
+  background: rgba(158, 180, 192, 0);
+  background-clip: padding-box;
+  border: none;
+  border: 1px solid rgba(28, 22, 33, 0.3);
+  border-radius: 0;
+  text-transform: none;
+  font-size: 13px;
+  height: 35px;
+  line-height: 1.38;
+  padding: 0 9px;
+  vertical-align: baseline;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: @custom-primary-font-family;
+
+  &::placeholder {
+    color: rgba(28, 22, 33, 0.5);
+    text-transform: none;
+  }
+}
+
+textarea {
+  background: rgba(158, 180, 192, 0);
+  border: none;
+  border: 1px solid rgba(28, 22, 33, 0.3);
+  text-transform: none;
+  border-radius: 0;
+  font-family: @custom-primary-font-family;
+  font-size: 13px;
+  vertical-align: baseline;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 75px;
+
+  &::placeholder {
+    color: rgba(28, 22, 33, 0.5);
+    text-transform: none;
+  }
+}
+
+textarea:-ms-input-placeholder,
+input[type='text']:-ms-input-placeholder,
+input[type='password']:-ms-input-placeholder,
+input[type='url']:-ms-input-placeholder,
+input[type='tel']:-ms-input-placeholder,
+input[type='search']:-ms-input-placeholder,
+input[type='number']:-ms-input-placeholder,
+input[type='datetime']:-ms-input-placeholder,
+input[type='email']:-ms-input-placeholder { color: rgba(28, 22, 33, 0.5); }
+
+select {
+  background: rgba(158, 180, 192, 0);
+  background-clip: padding-box;
+  border: none;
+  border: 1px solid rgba(28, 22, 33, 0.3);
+  border-radius: 0;
+  text-transform: none;
+  font-size: 13px;
+  height: 35px;
+  line-height: 1.38;
+  padding: 0 9px;
+  vertical-align: baseline;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: @custom-primary-font-family;
+}
+
+._keyfocus :focus,
+input:not([disabled]):focus,
+textarea:not([disabled]):focus,
+select:not([disabled]):focus {
+  box-shadow: inset 0 1px 2px rgba(28, 22, 33, 0.3), 0 0 5px rgba(28, 22, 33, 0.3);
+  border-color: transparent;
+}
+
+div a,
+.secondary a,
+.header-mobile .skip-content--style .actions a {
+  color: @custom-link-color;
+  font-weight: @custom-link-font-weight;
+
+  &:hover {
+    color: @custom-link-color-hover;
+    text-decoration: @custom-link-txt-decoration-hover;
+  }
+}
+
+.welcome-msg {
+  p {
+    color: @custom-color-1;
+  }
+}
+
+.account .column.main .block:not(.widget) .block-content .box-title {
+  padding-bottom: 10px;
+}
+
+// Rating Stars
+.rating-summary .rating-result > span::before,
+.review-control-vote label::before {
+  color: @star-rating-color-active !important;
+}
+
+//Custom bullets
+ul.bullet {
+  li {
+    background: none !important;
+    list-style: none;
+    list-style-position: inside;
+
+    a {
+      color: @custom-link-color;
+
+      &:hover {
+        color: @custom-link-color-hover;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      font-size: 0;
+      border: 1px solid @custom-primary-text-color;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  }
+}
+
+ul li,
+ol li {
+  font-size: @custom-primary-font-size;
+  color: @custom-primary-text-color;
+  line-height: 2;
+}
+
+ol.decimal {
+  list-style: decimal !important;
+  list-style-position: inside !important;
+}
+
+.webforms-success-text,
+.success-msg {
+  font-family: @custom-primary-font-family;
+  font-size: @custom-primary-font-size;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 30px;
+  background-color: @custom-primary-color;
+  color: @custom-color-1;
+
+  * {
+    color: @custom-color-1;
+    padding-bottom: 0;
+    font-size: 18px;
+  }
+}
+
+a.action.primary.white {
+  background-color: transparent !important;
+  border-color: #fff !important;
+  color: #fff !important;
+
+  &:hover {
+    background-color: transparent !important;
+    border-color: #fff !important;
+    color: #fff !important;
+  }
+}
+
+.action-auth-toggle {
+  &:hover {
+    color: @custom-link-color-hover !important;
+  }
+}
+//---------------------------------------------------------------------------------
+@media screen and (max-width: 768px) {
+  .action.primary {
+    background-color: @button-primary-bg-color !important;
+    color: @button-primary-txt-color !important;
+    font-size: @button-font-size !important;
+    font-family: @button-font-family;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 40px !important;
+    text-transform: @button-text-transform;
+    font-weight: @button-font-weight;
+    border-radius: @button-border-radius !important;
+    border: @button-border !important;
+
+    &:hover,
+    &:active {
+      background-color: @button-primary-bg-color-hover !important;
+      color: @button-primary-txt-color-hover !important;
+      border: @button-border-hover !important;
+    }
+  }
+
+  button,
+  #pointofsale_box #tools button,
+  .form.check-code .action.primary,
+  .cart.table-wrapper .actions-toolbar > .action,
+  .action-gift,
+  .block-cart-failed .action.continue,
+  .cart-container .form-cart .action.continue,
+  .gift-item-block .title,
+  .gift-options .actions-toolbar .secondary .action,
+  #minicart-content-wrapper .actions .primary button {
+    font-family: @button-font-family !important;
+    background-color: @button-primary-bg-color;
+    color: @button-primary-txt-color;
+    font-size: @button-font-size !important;
+    text-transform: @button-text-transform;
+    font-weight: @button-font-weight !important;
+    border-radius: @button-border-radius !important;
+    border: @button-border;
+
+    &:hover {
+      background-color: @button-primary-bg-color-hover;
+      color: @button-primary-txt-color-hover;
+    }
+  }
+
+  .control {
+    .ui-datepicker-trigger.v-middle {
+      background-color: transparent;
+    }
+  }
+
+  .review-form .action.submit.primary,
+  .actions-toolbar > .primary button,
+  .cart-summary .actions-toolbar > .primary button,
+  .cart-summary .form.giftregistry .fieldset .action.primary,
+  .paypal-review .block .actions-toolbar .action.primary,
+  .block-compare .action.compare,
+  .cart-summary .actions-toolbar > .primary .cart.table-wrapper .actions-toolbar > .action,
+  .cart-summary .actions-toolbar > .primary .action-gift .modal-footer .action.primary {
+    font-family: @button-font-family;
+    background-color: @button-primary-bg-color !important;
+    color: @button-primary-txt-color !important;
+    text-transform: @button-text-transform;
+    font-weight: @button-font-weight;
+    font-size: @button-font-size !important;
+    border-radius: @button-border-radius !important;
+    border: @button-border !important;
+
+    &:hover {
+      background-color: @button-primary-bg-color-hover !important;
+      color: @button-primary-txt-color-hover !important;
+    }
+  }
+
+  a.action.primary.white {
+    background-color: transparent !important;
+    border-color: #fff;
+    color: #fff !important;
+
+    &:hover {
+      background-color: transparent !important;
+      border-color: #fff;
+      color: #fff !important;
+    }
+  }
+}
