@@ -1,0 +1,10 @@
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $storeInformation = $objectManager->create('Magento\Store\Model\Information');
+    $store = $objectManager->create('Magento\Store\Model\Store');
+    $storeInfo = $storeInformation->getStoreInformationObject($store);
+    $phone = $storeInfo->getPhone();
+    $phoneLink = preg_replace('/[^0-9]/', "", $phone);
+?>
+
+<a class="phone-number" href="tel:+<?php echo $phoneLink ?>" title="<?php echo $phone; ?>"><?php echo $phone; ?></a>

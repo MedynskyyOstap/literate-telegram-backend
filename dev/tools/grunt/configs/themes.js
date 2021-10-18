@@ -51,9 +51,9 @@ module.exports = {
         ],
         dsl: 'less'
     },
-    justdial: {
+    clinicsinsurgery: {
       area: 'frontend',
-      name: 'Infortis/justdial',
+      name: 'Infortis/clinicsinsurgery',
       locale: 'en_US',
       files: [
         'css/styles-m',

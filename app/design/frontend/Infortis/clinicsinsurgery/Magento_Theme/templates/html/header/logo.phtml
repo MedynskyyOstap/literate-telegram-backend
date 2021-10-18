@@ -1,0 +1,55 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header\Logo $block
+ */
+?>
+<?php  
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$requestInterface = $objectManager->get('Magento\Framework\App\RequestInterface');
+
+        $routeName      = $requestInterface->getRouteName();
+        $moduleName     = $requestInterface->getModuleName(); 
+$controllerName = $requestInterface->getControllerName(); 
+$actionName     = $requestInterface->getActionName();
+if($routeName=='sales' && $actionName=='print'){
+	
+	$logofield = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('design/email/logo',\Magento\Store\Model\ScopeInterface::SCOPE_STORES);
+	$logosrc = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA).'email/logo/'.$logofield;
+}else{
+	$logosrc = $block->getLogoSrc();
+}
+?>
+
+
+<?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();?>
+<span data-action="toggle-nav" class="action nav-toggle"><span><?= /* @escapeNotVerified */ __('Toggle Nav') ?></span></span>
+<?php if ($block->isHomePage()):?>
+    <strong class="logo">
+        <?php else: ?>
+            <a class="logo" href="<?= $block->getUrl('') ?>" title="<?= /* @escapeNotVerified */ $storeName ?>">
+            <?php endif ?>
+            <img src="<?= /* @escapeNotVerified */ $logosrc; ?>"
+            title="<?= /* @escapeNotVerified */ $block->getLogoAlt() ?>"
+            alt="<?= /* @escapeNotVerified */ $block->getLogoAlt() ?>"
+            <?= $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
+            <?= $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
+            />
+            <?php if ($block->isHomePage()):?>
+            </strong>
+            <?php else:?>
+            </a>
+        <?php endif?>
+
+
+        <?php /* if($controllerName=='order' && $actionName=='print'){
+          $store_address = $this->helper('Smartwave\Porto\Helper\Data')->getConfig('sales/identity/address'); ?>
+          <div class="printaddress" style="float: right;"><?php echo $store_address; ?>
+      </div>
+  <?php } */ ?>

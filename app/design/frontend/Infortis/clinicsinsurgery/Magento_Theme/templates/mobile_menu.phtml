@@ -1,0 +1,174 @@
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+    $mediaUrl =$storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+    $catId = "2"; // Parent Category ID
+    $subcategory = $objectManager->create('Magento\Catalog\Model\Category')->load($catId);
+    $subcats = $subcategory->getChildrenCategories();
+    $categoryHelper = $this->getCategoryHelper();
+    $_storeCode = $storeManager->getStore()->getCode();
+?>
+    <div class="mobile-side-menu-container">
+        <a href="#main-menu-mobile" class="menu-toggle" id="main-menu-toggle-mobile" aria-label="Open hidden sidebar menu">
+            <span class="sr-only">Open hidden sidebar menu</span>
+            <span style="background: url('<?php echo $mediaUrl ?>wysiwyg/<?php echo $_storeCode ?>/menu.png') center no-repeat; width: 36px; height: 50px;"></span>
+            <span style="text-transform: uppercase; margin-left: 5px; font-size: 18px;line-height: 1;font-weight: bold;"> Menu </span>
+        </a>
+        <!---- Side main menu hidden--->
+        <div id="main-menu-mobile" class="main-menu"  aria-label="Hidden sidebar main menu">
+            <div class="menu-info-top" id="main-menu-start">
+                <ul id="style-2"  style="padding-bottom: 77px; box-sizing: border-box;">
+                    <li class="parent-cat">
+                        <a  href="<?php echo $block->getBaseUrl(); ?>">Home</a> 
+                    </li>
+                    <li class="parent-cat">
+                        <a href="<?php echo $block->getBseUrl(); ?>about-us">About</a>
+                    </li>
+                    <?php
+                    $cat_togg = 0;
+                    foreach ($subcats as $subcat) {
+                        $_category = $objectManager->create('Magento\Catalog\Model\Category')->load($subcat->getId());
+                        $subcaturl = $subcat->getUrl();
+                        if (!$_category->getIsActive() || !$_category->getIncludeInMenu()) {
+                            continue;
+                        }
+                        $has_children = $_category->getChildrenCount() !== '0';
+                        ?>
+                        <li class="<?php if($has_children) {echo 'parent-cat';} ?>">
+                            <div style="display: flex;justify-content: space-between;">
+                                <a href="<?php echo $subcaturl ?>" title="<?php echo $subcat->getName(); ?>">
+                                    <?php echo $subcat->getName(); ?>
+                                </a>
+                                <?php if($has_children) { ?>
+                                    <a href="#" class="opener">&gt;</a>
+                                <?php }; ?>
+                            </div>
+                            <!-- Start 3rd Level Chiled Category-->
+                            <?php
+                                $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                                $object_managertwo = $objectManager->create('Magento\Catalog\Model\Category')->load($subcat->getId());
+                                $subcatslevelthird = $object_managertwo->getChildrenCategories();
+                            ?>
+                            <?php if ($subcatslevelthird) { ?>
+                            <ul>
+                                <li class="back-cat"><a class="back-link" href="#">&lt; <span><?php echo $subcat->getName(); ?></span></a></li>
+                                <?php
+                                foreach ($subcatslevelthird as $subcatthird) {
+                                    $_outputhelper = $this->helper('Magento\Catalog\Helper\Output');
+                                    $subcaturl = $subcatthird->getUrl();
+                                    $has_children = $_category->getChildrenCount() !== '0';
+                                    ?>
+                                    <li class="<?php if($has_children) {echo 'parent-cat';} ?>">
+                                        <a href="<?php echo $subcaturl ?>">
+                                            <?php echo $subcatthird->getName(); ?>
+                                        </a>
+
+                                        <!-- Start 4th Level Chiled Category-->
+                                        <?php
+                                            $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                                            $object_managerthree = $_objectManager->create('Magento\Catalog\Model\Category')->load($subcatthird->getId());
+                                            $subcatslevel = $object_managerthree->getChildrenCategories();
+                                        ?>
+                                        <?php if ($subcatslevel){?>
+                                        <ul class="chiled_cat_bg">
+                                            <?php
+                                            foreach ($subcatslevel as $subcatlevel) {
+                                                $_outputhelper = $this->helper('Magento\Catalog\Helper\Output');
+                                                $subcaturl = $subcatlevel->getUrl();
+                                                ?>
+                                                <li>
+                                                    <a href="<?php echo $subcaturl ?>">
+                                                        <?php echo $subcatlevel->getName(); ?>
+                                                    </a>
+                                                </li>
+
+                                            <?php } ?>
+                                        </ul>
+                                        <?php } ?>  <!-- End 4th level Chiled Category-->
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                            <?php } ?>  <!-- End 3rd level Chiled Category-->
+                        </li>
+                        <?php } ?>
+                        <?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Theme::after_menu_links.phtml")->toHtml() ?>
+                        <li  class="parent-cat">
+                           <div style="display: flex;justify-content: space-between;">
+                               <a  href="javascript:void(0)">Account</a>
+                               <a href="#" class="opener">&gt; </a>
+                            </div>
+                            <ul>
+                                <li class="back-cat"><a class="back-link" href="#">&lt; <span>Account</span></a></li>
+                                <li><a href="<?php echo $block->getBaseUrl(); ?>customer/account/">Store Account</a></li>
+                                <li>
+                                   <?php echo $this->getLayout()->createBlock("Magento\Wishlist\Block\Link")->setTemplate("Magento_Wishlist::link.phtml")->toHtml() ?>
+                                </li>
+                                <li>
+                                   <?php echo $this->getLayout()->createBlock("Magento\Customer\Block\Account\AuthorizationLink")->setTemplate("Magento_Customer::account/link/authorization.phtml")->toHtml() ?>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $block->getBaseUrl(); ?>customer/account/create/" title="Sign Up">Sign Up</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li style="min-height: 44px;">
+                            <?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Catalog::product/compare/link.phtml")->toHtml() ?>
+                        </li>
+
+                        <li id="mobile-menu-cart" class="mobile-menu-cart">
+                           <a href="<?php echo $block->getBaseUrl(); ?>checkout/cart" style="padding-right: 10px;">Cart 
+                                <span class="counter">
+                                    <?php
+                                        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                                        $cart = $objectManager->get('\Magento\Checkout\Model\Cart');
+
+                                        $totalQuantity = intval($cart->getQuote()->getItemsQty());
+
+                                        if($totalQuantity=== null) {
+                                            echo "0 items";
+                                        } else if ($totalQuantity === "1") {
+                                            echo $totalQuantity." item";
+                                        } else {
+                                            echo $totalQuantity." items";
+                                        }
+                                    ?>
+                                </span>
+                            </a>
+                        </li>
+                        <div class="link-container">
+                            <a class="level-top action primary" href="<?php echo $block->getBaseUrl(); ?>contact/"  target="_blank">
+                                <span>REQUEST AN <br> APPOINTMENT</span>
+                            </a>
+                        </div>
+                        <?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Theme::menu_buttons.phtml")->toHtml() ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script>
+    requirejs(['jquery'], function(jQuery) {
+            jQuery(function($) {
+            jQuery(".menu-toggle").click( function(e){
+                    jQuery(this).next().addClass("open")
+            });
+            jQuery(".back-link").click(function(){
+                jQuery(this).closest("ul").removeClass("open")
+            });
+            jQuery(".menu-close").click(function(){
+                jQuery(this).closest(".open").removeClass("open")
+            });
+            jQuery(".parent-cat .opener").click(function(){
+                jQuery(this).parent().next().addClass("open")
+            });
+        });
+    jQuery(document).on("click", function(e){
+        if(
+            jQuery(e.target).closest(jQuery(".main-menu")).length == 0 &&
+            jQuery(".main-menu").hasClass("open") &&
+            jQuery(e.target).closest(jQuery(".menu-toggle")).length == 0
+        ){
+            jQuery('.main-menu').toggleClass('open');
+        }
+        });
+    });
+</script>

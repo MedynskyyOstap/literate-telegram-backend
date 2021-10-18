@@ -1,0 +1,133 @@
+// home page tab css
+.r-tabs {
+	position: relative;
+	.r-tabs-tab {
+		display: inline-block;
+		margin: 0px;
+		list-style: none;
+	}
+	.r-tabs-panel {
+		padding: 15px;
+		display: none;
+		margin-bottom: 3px;
+		height: auto;
+	}
+	.r-tabs-accordion-title {
+		display: none;		
+		background-color: @tabs-bg-color;
+		> a{
+			color: @tabs-txt-color;
+			padding: 10px 15px;
+			display: block;
+		}
+
+		&.r-tabs-state-active{
+			background-color: @tabs-bg-color-active;
+			> a{
+				color: @tabs-txt-color-active;
+			}
+		}
+	}
+	.r-tabs-panel{
+		&.r-tabs-state-active {
+			display: block;
+		}
+	}
+	.r-tabs-nav {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #ccc; 		
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		
+			.r-tabs-tab {
+				position: relative;
+				top: 1px;
+				padding: 0px 0px;				
+				top: 1px;
+				border-left: 1px solid #FFF;
+				border-right: 1px solid #FFF;
+				border-bottom: 1px solid #ccc;
+			
+			&:hover {
+				margin-bottom: 0px;
+				border-left: 1px solid @tabs-bg-color-hover;
+				border-right: 1px solid @tabs-bg-color-hover;
+				border-bottom: 1px solid #fff;				
+				
+				.r-tabs-anchor {
+					color: @tabs-txt-color-active;
+					background-color: @tabs-bg-color-active;
+				}
+			}
+		}
+	}
+	.r-tabs-nav {
+		.r-tabs-anchor {
+			margin-bottom: 0px;
+			padding: 10px 12px;
+			display: inline-block;
+			text-decoration: none;
+			color: @custom-color-1;
+			font-weight: 400;
+			font-size: @custom-primary-font-size; 
+			background:@tabs-bg-color;
+			text-transform: uppercase;
+		}
+		.r-tabs-state-active {
+			
+			border-left: 1px solid @tabs-bg-color-active;
+			border-right: 1px solid @tabs-bg-color-active;
+			border-bottom: 1px solid #fff;
+			color: @custom-color-1 ;
+				.r-tabs-anchor {
+					color: @tabs-txt-color-active;
+					background:@tabs-bg-color-active;
+				}
+		}
+		.r-tabs-accordion-title {
+			.r-tabs-anchor {
+				display: block;
+				padding: 10px;
+				color: @custom-color-1; 
+				background:#a7001f;
+				font-weight: 400;
+				text-decoration: none;
+				margin-bottom: 3px;
+				font-size: @custom-primary-font-size;
+				text-transform: uppercase;
+			}
+			&.r-tabs-state-active {
+				.r-tabs-anchor {
+					color: @tabs-txt-color-active;
+					background: @tabs-bg-color-active;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.r-tabs-panel{
+		overflow: hidden;
+		
+		
+		.items-grid-partitioned {
+			.item{
+				border-top: 0px;
+			}
+		}
+	}	
+}
+
+
+.r-tabs {
+	.r-tabs-panel {
+		.items-grid-partitioned {
+			.item {
+				min-height: 380px !important;
+				padding-bottom: 60px!important;
+			}
+		}
+	}
+}

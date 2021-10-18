@@ -1,0 +1,234 @@
+@custom-container-width: 970px;
+
+.products-section.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10% auto 5%;
+  max-width: @custom-container-width;
+
+  .prod-desc {
+    width: 60%;
+    margin: 0 0 0 auto;
+    padding-left: 40px;
+
+    h2 {
+      margin: 30px 0;
+      color: #54585a;
+      font-weight: 500;
+    }
+
+    h3 {
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .action.primary {
+      min-width: 200px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+  }
+
+  > img {
+    max-width: 380px;
+    width: 100%;
+  }
+}
+
+.mask-container {
+  position: relative;
+  z-index: 0;
+
+  .bg-mask {
+    position: absolute;
+    z-index: -1;
+    background: transparent;
+    box-shadow: inset 0 -15px 15px rgba(0, 0, 0, 0.03);
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 20%;
+  }
+}
+
+.promo-carousel {
+  position: relative;
+  z-index: 0;
+
+  .container {
+    margin: 5% auto;
+    max-width: @custom-container-width;
+    text-align: center;
+
+    .inner-wrapper {
+      margin-bottom: 65px;
+      padding: 40px 0 0;
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .block,
+    .block.itemslider .block-content {
+      margin: 0;
+    }
+
+    a.action.primary {
+      padding: 0 50px;
+    }
+
+    .item {
+      min-width: 152px;
+
+      .product-item-info {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .product-image-photo {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .bg-mask {
+    background-color: rgba(248, 248, 246, 0.8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    clip-path: polygon(0 88%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .owl-carousel {
+    position: relative;
+
+    .owl-controls .owl-buttons .owl-prev::before {
+      content: "";
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 6px;
+      position: absolute;
+      left: -20px;
+      top: 40%;
+      transform: translate(0, -50%) rotate(135deg);
+    }
+
+    .owl-controls .owl-buttons .owl-next::before {
+      content: "";
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 6px;
+      position: absolute;
+      right: -20px;
+      top: 40%;
+      transform: translate(0, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.insta-section {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+
+  h2 {
+    text-transform: none;
+  }
+
+  .container {
+    max-width: @custom-container-width;
+    margin: 0 auto;
+  }
+
+  .bg-mask {
+    background: #f4ebe6;
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    z-index: -1;
+    bottom: 0;
+  }
+
+  a.action.primary {
+    margin: 40px auto 60px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .promo-carousel {
+    .container {
+      .products.list {
+        justify-content: space-evenly;
+      }
+
+      .item {
+        margin-right: 1%;
+        margin-left: 1%;
+
+        .product-item-info {
+          max-width: 240px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .bg-mask {
+      clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+
+  .products-section.container {
+    flex-direction: column;
+    justify-content: center;
+    margin: 5% auto;
+    max-width: 568px;
+
+    > img {
+      width: 75%;
+      margin: 0 auto;
+      height: 407px;
+      align-self: flex-end;
+    }
+
+    .prod-desc {
+      max-width: 380px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  }
+
+  .mask-container .bg-mask {
+    top: 11%;
+  }
+}
+
+@media screen and (max-width: 606px) {
+  .insta-section {
+    .bg-mask {
+      height: 80%;
+    }
+
+    a.action.primary {
+      margin: 15px auto 25px;
+    }
+  }
+
+  .products-section.container .prod-desc,
+  .products-section.container img {
+    width: 100%;
+    max-width: unset;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
