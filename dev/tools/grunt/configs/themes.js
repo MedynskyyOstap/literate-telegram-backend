@@ -51,9 +51,9 @@ module.exports = {
         ],
         dsl: 'less'
     },
-    justdial: {
+    galapagospenguin: {
       area: 'frontend',
-      name: 'Infortis/justdial',
+      name: 'Infortis/galapagospenguin',
       locale: 'en_US',
       files: [
         'css/styles-m',
