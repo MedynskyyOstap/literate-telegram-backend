@@ -51,9 +51,69 @@ module.exports = {
         ],
         dsl: 'less'
     },
-    justdial: {
+    galapagospenguin: {
       area: 'frontend',
-      name: 'Infortis/justdial',
+      name: 'Infortis/galapagospenguin',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    roadrunnergreater: {
+      area: 'frontend',
+      name: 'Infortis/roadrunnergreater',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    griffonvulture: {
+      area: 'frontend',
+      name: 'Infortis/griffonvulture',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    palethroatedthreetoedsloth: {
+      area: 'frontend',
+      name: 'Infortis/palethroatedthreetoedsloth',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    goosegreylag: {
+      area: 'frontend',
+      name: 'Infortis/goosegreylag',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    civetcommonpalm: {
+      area: 'frontend',
+      name: 'Infortis/civetcommonpalm',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    monetizecrossplatformblockchains: {
+      area: 'frontend',
+      name: 'Infortis/monetizecrossplatformblockchains',
       locale: 'en_US',
       files: [
         'css/styles-m',
