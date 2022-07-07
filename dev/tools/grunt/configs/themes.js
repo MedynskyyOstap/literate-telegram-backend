@@ -51,9 +51,109 @@ module.exports = {
         ],
         dsl: 'less'
     },
-    justdial: {
+    galapagospenguin: {
       area: 'frontend',
-      name: 'Infortis/justdial',
+      name: 'Infortis/galapagospenguin',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    roadrunnergreater: {
+      area: 'frontend',
+      name: 'Infortis/roadrunnergreater',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    griffonvulture: {
+      area: 'frontend',
+      name: 'Infortis/griffonvulture',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    palethroatedthreetoedsloth: {
+      area: 'frontend',
+      name: 'Infortis/palethroatedthreetoedsloth',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    goosegreylag: {
+      area: 'frontend',
+      name: 'Infortis/goosegreylag',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    civetcommonpalm: {
+      area: 'frontend',
+      name: 'Infortis/civetcommonpalm',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    monetizecrossplatformblockchains: {
+      area: 'frontend',
+      name: 'Infortis/monetizecrossplatformblockchains',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    benchmarknextgenerationROI: {
+      area: 'frontend',
+      name: 'Infortis/benchmarknextgenerationROI',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    exploitefficientcommunities: {
+      area: 'frontend',
+      name: 'Infortis/exploitefficientcommunities',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    transitionnextgenerationportals: {
+      area: 'frontend',
+      name: 'Infortis/transitionnextgenerationportals',
+      locale: 'en_US',
+      files: [
+        'css/styles-m',
+        'css/styles-l'
+      ],
+      dsl: 'less'
+  },
+    engineerefficienttechnologies: {
+      area: 'frontend',
+      name: 'Infortis/engineerefficienttechnologies',
       locale: 'en_US',
       files: [
         'css/styles-m',
